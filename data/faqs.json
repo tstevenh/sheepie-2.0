@@ -1,0 +1,68 @@
+{
+  "categories": [
+    {
+      "name": "CalmiCloud Earplugs",
+      "items": [
+        {
+          "question": "Are they reusable? How do I clean them?",
+          "answer": "Yes, CalmiCloud is designed for repeated use. Simply wash gently with mild soap and warm water, let them air-dry completely, and store in the provided clean case. With proper care, they outlast disposable foam plugs significantly."
+        },
+        {
+          "question": "Do they come in different sizes?",
+          "answer": "CalmiCloud features a universal moldable design. Instead of forcing a specific size into your ear canal, you shape the silicone to seal your outer ear, providing a custom, pressure-free fit for any ear size."
+        },
+        {
+          "question": "Will I still hear my alarm clock?",
+          "answer": "Yes. CalmiCloud is engineered to reduce background noise (like snoring or traffic) by approximately 28dB. Important alert sounds, such as alarms or phone ringtones, remain audible for your safety."
+        }
+      ]
+    },
+    {
+      "name": "LumiCloud Sleep Mask",
+      "items": [
+        {
+          "question": "Does it press on my eyelashes or eyelids?",
+          "answer": "Not at all. The mask features deep 3D contoured eye cavities that allow you to blink freely. It provides total blackout isolation without any pressure on your eyes."
+        },
+        {
+          "question": "Is the strap hair-friendly?",
+          "answer": "Yes. We use a smooth, snag-free adjustable strap designed specifically to prevent tangling, unlike the rough elastic bands found on standard masks."
+        },
+        {
+          "question": "Is it machine washable?",
+          "answer": "We recommend hand washing to maximize the lifespan of the memory foam. If you must use a machine, place the mask in a laundry bag and use a delicate cycle with cold water."
+        }
+      ]
+    },
+    {
+      "name": "CerviCloud Pillow",
+      "items": [
+        {
+          "question": "Is the pillow hard or soft?",
+          "answer": "CerviCloud utilizes medium-firm memory foam. It is engineered to be supportive enough to hold your cervical spine in neutral alignment, yet compliant enough to feel comfortable, never stiff."
+        },
+        {
+          "question": "Is there an adjustment period?",
+          "answer": "Yes, typically 7-14 nights. If you are switching from a traditional pillow, your neck muscles and spine may need time to relax into their correct natural alignment."
+        },
+        {
+          "question": "Is the cover washable?",
+          "answer": "Yes. The cooling bamboo outer cover is removable and machine washable. Please do not wash the inner memory foam core."
+        }
+      ]
+    },
+    {
+      "name": "Shipping & Returns",
+      "items": [
+        {
+          "question": "What is your return policy?",
+          "answer": "We accept returns or exchanges for manufacturing defects or incorrect items received. Due to strict hygiene standards, we cannot accept returns on used sleep products unless they are defective."
+        },
+        {
+          "question": "How long does shipping take?",
+          "answer": "Orders are typically processed within 24 hours. Standard delivery takes 2–5 working days, depending on your location."
+        }
+      ]
+    }
+  ]
+}

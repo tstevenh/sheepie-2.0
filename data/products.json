@@ -1,0 +1,91 @@
+[
+  {
+    "slug": "cervicloud",
+    "name": "CerviCloud Pillow",
+    "tagline": "Spine alignment, perfected.",
+    "price": "IDR 880.000",
+    "description": "Transform your rest with the CerviCloud Pillow. Its 4D Butterfly shape cradles your neck to maintain natural cervical alignment, relieving persistent pressure points. Infused with thermal diffusion particles and wrapped in Ice-Silk fabric, it offers expansive, cooling support that adapts to your every move.",
+    "benefits": [
+      "4D Butterfly ergonomic contour",
+      "Cooling Ice-Silk & thermal diffusion",
+      "Slow-rebound high-density foam",
+      "Expansive 64cm wide support"
+    ],
+    "images": [
+      "/images/products/cervicloud/cervi.jpeg",
+      "/images/products/cervicloud/cervi (3).png",
+      "/images/products/cervicloud/cervi (4).png",
+      "/images/products/cervicloud/cervi (5).png",
+      "/images/products/cervicloud/cervi (6).png",
+      "/images/products/cervicloud/cervi (7).png",
+      "/images/products/cervicloud/cervi (8).png",
+      "/images/products/cervicloud/cervi (9).png"
+    ],
+    "shopeeUrl": "https://shopee.co.id/Sheepie-CerviCloud-Bantal-Cervical-Pillow-Bantal-Kesehatan-Memory-Foam-untuk-Leher-dan-bahu-i.669518207.25697801158?extraParams=%7B%22display_model_id%22%3A340273398976%7D",
+    "tokopediaUrl": "https://www.tokopedia.com/sheepie/sheepie-cervicloud-bantal-cervical-pillow-ergonomis-64x35x12cm-untuk-leher-tulang-belakang-dengan-cooling-fabric-slow-rebound-memory-foam-bed-1732026911304484377",
+    "variants": [
+      {
+        "name": "Pillow",
+        "price": "IDR 880.000",
+        "shopeeUrl": "https://shopee.co.id/Sheepie-CerviCloud-Bantal-Cervical-Pillow-Bantal-Kesehatan-Memory-Foam-untuk-Leher-dan-bahu-i.669518207.25697801158?extraParams=%7B%22display_model_id%22%3A340273398976%7D",
+        "tokopediaUrl": "https://www.tokopedia.com/sheepie/sheepie-cervicloud-bantal-cervical-pillow-ergonomis-64x35x12cm-untuk-leher-tulang-belakang-dengan-cooling-fabric-slow-rebound-memory-foam-bed-1732026911304484377"
+      },
+      {
+        "name": "Case Only",
+        "price": "IDR 198.000",
+        "shopeeUrl": "https://shopee.co.id/-SARUNG-ONLY-Sheepie-CerviCloud-Cervical-Pillow-Bantal-Kesehatan-Memory-Foam-for-Leher-dan-bahu-i.669518207.43809302912?extraParams=%7B%22display_model_id%22%3A265779943937%7D",
+        "tokopediaUrl": "https://www.tokopedia.com/sheepie/sarung-only-sheepie-cervicloud-cervical-pillow-bantal-kesehatan-memory-foam-for-leher-dan-bahu-1732003397370480153"
+      }
+    ]
+  },
+  {
+    "slug": "lumicloud",
+    "name": "LumiCloud Sleep Mask",
+    "tagline": "The weightless blackout experience.",
+    "price": "IDR 175.000",
+    "description": "Engineered for the heat, crafted for the soul. LumiCloud combines premium Ice-Silk cooling fabric with 3D contoured eye cavities to deliver 100% blackout isolation without pressure. Breathable, adjustable, and featherlight—it's not just a mask, it's a signal to your brain that it's time to rest.",
+    "benefits": [
+      "Ice-Silk cooling fabric",
+      "100% Blackout engineering",
+      "Zero-pressure 3D eye cavities",
+      "Breathable & sweat-resistant"
+    ],
+    "images": [
+      "/images/products/lumicloud/lumi.png",
+      "/images/products/lumicloud/lumi (2).png",
+      "/images/products/lumicloud/lumi (3).png",
+      "/images/products/lumicloud/lumi (4).png",
+      "/images/products/lumicloud/lumi (5).png",
+      "/images/products/lumicloud/lumi (6).png",
+      "/images/products/lumicloud/lumi (7).png",
+      "/images/products/lumicloud/lumi (8).png",
+      "/images/products/lumicloud/lumi (9).png"
+    ],
+    "shopeeUrl": "https://shopee.co.id/Sheepie-LumiCloud-Sleep-Mask-Penutup-Mata-Tidur-Premium-Katun-100-Blackout-Lembut-Empuk-Nyaman-Tanpa-Gerah-i.669518207.55952823103?extraParams=%7B%22display_model_id%22%3A315274004065%7D",
+    "tokopediaUrl": "https://www.tokopedia.com/sheepie/sheepie-lumicloud-sleep-mask-penutup-mata-tidur-premium-katun-100-blackout-lembut-empuk-nyaman-tanpa-gerah-1733526459631896089"
+  },
+  {
+    "slug": "calmicloud",
+    "name": "CalmiCloud Earplugs",
+    "tagline": "Moldable silence for a chaotic world.",
+    "price": "IDR 49.000",
+    "description": "Achieve profound silence without the invasive pressure. CalmiCloud is crafted from medical-grade, moldable silicone that seals your outer ear canal perfectly. Water-resistant and reusable, it blocks out snoring, traffic, and distraction—whether you're sleeping, swimming, or seeking deep focus.",
+    "benefits": [
+      "Custom-fit moldable silicone",
+      "Pressure-free outer seal",
+      "Water-resistant & hygienic",
+      "Reusable & eco-friendly"
+    ],
+    "images": [
+      "/images/products/calmicloud/calmi.png",
+      "/images/products/calmicloud/calmi (2).png",
+      "/images/products/calmicloud/calmi (3).png",
+      "/images/products/calmicloud/calmi (4).png",
+      "/images/products/calmicloud/calmi (5).png",
+      "/images/products/calmicloud/calmi (6).png",
+      "/images/products/calmicloud/calmi (11).png"
+    ],
+    "shopeeUrl": "https://shopee.co.id/Sheepie-CalmiCloud-Moldable-Earplug-Penutup-Kuping-Anti-Bising-Cocok-untuk-Tidur-Traveling-i.669518207.40426532493?extraParams=%7B%22display_model_id%22%3A400149006464%7D",
+    "tokopediaUrl": "https://www.tokopedia.com/sheepie/sheepie-calmicloud-moldable-earplug-penutup-kuping-anti-bising-anti-air-earplug-silikon-medical-grade-cocok-untuk-tidur-traveling-1733268346396313113"
+  }
+]

@@ -1,0 +1,127 @@
+"use client";
+
+import { useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { motion, useScroll, useTransform } from "framer-motion";
+
+export function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
+  return (
+    <section ref={containerRef} className="relative w-full min-h-[calc(100vh-64px)] flex items-center justify-center overflow-hidden">
+      
+      {/* Dynamic Background Text (Subtle Layer) */}
+      <div className="absolute top-[5%] left-0 w-full overflow-hidden opacity-[0.03] select-none pointer-events-none">
+        <h1 className="text-[20vw] font-display font-black whitespace-nowrap text-primary animate-marquee">
+          DEEP SLEEP · RESTORE · DREAM · DEEP SLEEP · RESTORE · DREAM ·
+        </h1>
+      </div>
+
+      <div className="container mx-auto px-4 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+        
+        {/* Left: Typography & Story */}
+        <div className="lg:col-span-6 space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="space-y-4"
+          >
+            <div className="flex items-center gap-4">
+               <div className="h-px w-12 bg-primary/40" />
+               <span className="text-primary/80 text-sm font-bold tracking-[0.2em] uppercase font-body">
+                 The New Standard of Rest
+               </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-medium text-primary leading-[0.9] tracking-tighter">
+              Sleep is <br/>
+              <span className="italic font-light text-primary/70">The Foundation.</span>
+            </h1>
+          </motion.div>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-md"
+          >
+            We don't just sell pillows. We engineer silence, darkness, and alignment.
+            <br />
+            <span className="font-medium text-foreground">Prepare for a clearer tomorrow.</span>
+          </motion.p>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="flex flex-wrap gap-4 pt-2"
+          >
+            <Button size="lg" className="rounded-full h-14 px-8 text-base bg-primary text-white hover:bg-primary/90 shadow-xl hover:scale-105 transition-all duration-300" asChild>
+              <Link href="#products">Explore the Collection</Link>
+            </Button>
+            <Button size="lg" variant="ghost" className="rounded-full h-14 px-8 text-base hover:bg-primary/5 text-primary" asChild>
+              <Link href="/about">Our Philosophy</Link>
+            </Button>
+          </motion.div>
+        </div>
+        
+        {/* Right: Immersive Image with Parallax */}
+        <div className="lg:col-span-6 relative h-[50vh] lg:h-[70vh] w-full">
+           <motion.div style={{ y, scale }} className="relative w-full h-full">
+             <div className="absolute inset-0 rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl">
+               <Image 
+                src="/images/edited/DSC01334.JPG" 
+                alt="Woman sleeping peacefully" 
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+               {/* Editorial Overlay */}
+               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent mix-blend-multiply" />
+             </div>
+             
+             {/* Floating Elements (Glassmorphism) */}
+             <motion.div 
+               animate={{ y: [0, -20, 0] }}
+               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+               className="absolute -bottom-10 -left-10 lg:left-[-20%] bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-xs border border-white/50 hidden md:block"
+             >
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-primary/60">Now Trending</span>
+                </div>
+                <p className="font-display text-xl text-primary leading-tight">
+                  "The only pillow that actually stopped my neck pain."
+                </p>
+             </motion.div>
+           </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div 
+        style={{ opacity }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] uppercase tracking-[0.3em] text-primary/40">Scroll to Dream</span>
+        <motion.div 
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-px h-12 bg-gradient-to-b from-primary/40 to-transparent"
+        />
+      </motion.div>
+    </section>
+  );
+}
