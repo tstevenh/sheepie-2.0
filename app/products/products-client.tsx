@@ -14,7 +14,7 @@ import products from "@/data/products.json";
 const productLifestyleMap: Record<string, string> = {
   "calmicloud": "/images/edited/DSC01249.JPG", 
   "cervicloud": "/images/edited/DSC01187.JPG", 
-  "lumicloud": "/images/edited/DSC01278.JPG" 
+  "lumicloud": "/images/edited/DSC01316.JPG" 
 };
 
 export function ProductsClient() {

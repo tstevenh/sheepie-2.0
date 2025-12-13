@@ -8,6 +8,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import products from "@/data/products.json";
 
+// Specific image overrides for the Trinity Showcase
+const showcaseImages: Record<string, string> = {
+  "lumicloud": "/images/edited/DSC01278.JPG",
+  "cervicloud": "/images/photoshoot/DSC01110.JPG",
+  "calmicloud": "/images/edited/DSC01313.JPG"
+};
+
 export function ProductShowcase() {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -55,13 +62,16 @@ export function ProductShowcase() {
 }
 
 function ProductSlide({ product, index }: { product: any, index: number }) {
+  // Use the override image if it exists, otherwise fall back to the first product image
+  const displayImage = showcaseImages[product.slug] || product.images[0];
+
   return (
     <div className="group relative h-[70vh] w-[85vw] md:w-[50vw] flex-shrink-0 bg-white rounded-[3rem] overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
       <Link href={`/products/${product.slug}`} className="block h-full w-full">
         {/* Image Half */}
         <div className="absolute inset-0 h-full w-full">
            <Image
-            src={product.images[0]}
+            src={displayImage}
             alt={product.name}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"
