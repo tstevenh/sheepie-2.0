@@ -9,6 +9,16 @@ import Link from "next/link";
 
 const scienceSteps = [
   {
+    id: "alignment",
+    title: "Cervical Neutrality",
+    subtitle: "The Science of Alignment",
+    description: "Misalignment compresses nerves and restricts blood flow. Our ergonomic contours maintain the natural C-curve of your spine, ensuring zero-gravity support.",
+    icon: Activity,
+    image: "/images/edited/DSC01139.JPG",
+    accent: "text-white",
+    productLink: "/products/cervicloud"
+  },
+  {
     id: "darkness",
     title: "Circadian Synchronization",
     subtitle: "The Science of Darkness",
@@ -27,16 +37,6 @@ const scienceSteps = [
     image: "/images/edited/DSC01316.JPG", 
     accent: "text-indigo-200",
     productLink: "/products/calmicloud"
-  },
-  {
-    id: "alignment",
-    title: "Cervical Neutrality",
-    subtitle: "The Science of Alignment",
-    description: "Misalignment compresses nerves and restricts blood flow. Our ergonomic contours maintain the natural C-curve of your spine, ensuring zero-gravity support.",
-    icon: Activity,
-    image: "/images/edited/DSC01139.JPG",
-    accent: "text-white",
-    productLink: "/products/cervicloud"
   }
 ];
 
@@ -115,7 +115,7 @@ export function ScienceScroll() {
 
                 <div className="pt-4">
                   <Button variant="outline" className="rounded-full h-12 px-8 border-white/20 bg-transparent text-white hover:bg-white hover:text-black transition-all duration-300" asChild>
-                    <Link href={step.productLink}>Explore {step.id === 'darkness' ? 'LumiCloud Sleep Mask' : step.id === 'silence' ? 'CalmiCloud' : 'CerviCloud Pillow'}</Link>
+                    <Link href={step.productLink}>Explore {step.id === 'darkness' ? 'LumiCloud Eye Mask' : step.id === 'silence' ? 'CalmiCloud' : 'CerviCloud Pillow'}</Link>
                   </Button>
                 </div>
              </motion.div>

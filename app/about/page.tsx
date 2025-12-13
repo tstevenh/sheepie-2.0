@@ -56,7 +56,7 @@ export default function AboutPage() {
           <h2>Designed for Every Sleeper</h2>
           <p>
             We spent months obsessed with density, rebound rates, and fabric breathability. 
-            Whether you need the cervical precision of the <strong>CerviCloud Pillow</strong>, the silence of our <strong>CalmiCloud</strong> earplugs, or the total darkness of the <strong>LumiCloud Sleep Mask</strong>, every curve is intentional.
+            Whether you need the cervical precision of the <strong>CerviCloud Pillow</strong>, the silence of our <strong>CalmiCloud</strong> earplugs, or the total darkness of the <strong>LumiCloud Eye Mask</strong>, every curve is intentional.
           </p>
           <p>
             We don't just sell sleep products. We sell the feeling of waking up ready.

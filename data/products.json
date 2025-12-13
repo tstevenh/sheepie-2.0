@@ -2,7 +2,7 @@
   {
     "slug": "cervicloud",
     "name": "CerviCloud Pillow",
-    "tagline": "Spine alignment, perfected.",
+    "tagline": "Engineering the perfect spine alignment.",
     "price": "IDR 880.000",
     "description": "Transform your rest with the CerviCloud Pillow. Its 4D Butterfly shape cradles your neck to maintain natural cervical alignment, relieving persistent pressure points. Infused with thermal diffusion particles and wrapped in Ice-Silk fabric, it offers expansive, cooling support that adapts to your every move.",
     "benefits": [
@@ -40,12 +40,12 @@
   },
   {
     "slug": "lumicloud",
-    "name": "LumiCloud Sleep Mask",
+    "name": "LumiCloud Eye Mask",
     "tagline": "The weightless blackout experience.",
     "price": "IDR 175.000",
-    "description": "Engineered for the heat, crafted for the soul. LumiCloud combines premium Ice-Silk cooling fabric with 3D contoured eye cavities to deliver 100% blackout isolation without pressure. Breathable, adjustable, and featherlight—it's not just a mask, it's a signal to your brain that it's time to rest.",
+    "description": "Engineered for the heat, crafted for the soul. LumiCloud combines premium Soft Cotton Fabric with 3D contoured eye cavities to deliver 100% blackout isolation without pressure. Breathable, adjustable, and featherlight—it's not just a mask, it's a signal to your brain that it's time to rest.",
     "benefits": [
-      "Ice-Silk cooling fabric",
+      "Soft Cotton Fabric",
       "100% Blackout engineering",
       "Zero-pressure 3D eye cavities",
       "Breathable & sweat-resistant"

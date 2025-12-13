@@ -88,7 +88,7 @@ function ProductSlide({ product, index }: { product: any, index: number }) {
                 0{index + 1} — {product.slug === 'calmicloud' ? 'Silence' : product.slug === 'lumicloud' ? 'Darkness' : 'Comfort'}
               </span>
               <h3 className="text-4xl md:text-6xl font-display font-medium leading-none">
-                {product.name === "CerviCloud Ortho" ? "CerviCloud Pillow" : product.name === "LumiCloud Mask" ? "LumiCloud Sleep Mask" : product.name}
+                {product.name === "CerviCloud Ortho" ? "CerviCloud Pillow" : product.name === "LumiCloud Mask" ? "LumiCloud Eye Mask" : product.name}
               </h3>
               <p className="text-lg md:text-xl text-white/80 font-light max-w-md pt-2 line-clamp-2">
                 {product.tagline}

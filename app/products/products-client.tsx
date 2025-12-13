@@ -115,7 +115,7 @@ function ParallaxProductRow({ product, index }: { product: any, index: number })
           <div className={`lg:col-span-5 relative z-10 space-y-10 ${isEven ? 'lg:order-2' : 'lg:order-1 lg:text-right'}`}>
              <motion.div style={{ y: textY }}>
                <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-medium text-primary leading-[1] mb-4">
-                 {product.name === "CerviCloud Ortho" ? "CerviCloud Pillow" : product.name === "LumiCloud Mask" ? "LumiCloud Sleep Mask" : product.name}
+                 {product.name === "CerviCloud Ortho" ? "CerviCloud Pillow" : product.name === "LumiCloud Mask" ? "LumiCloud Eye Mask" : product.name}
                </h2>
                <p className="text-2xl text-primary/60 font-light italic font-display">
                  {product.tagline}

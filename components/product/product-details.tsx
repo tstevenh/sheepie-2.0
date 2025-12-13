@@ -49,7 +49,7 @@ export function ProductDetails({ product }: { product: Product }) {
         </div>
         
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-primary leading-tight">
-          {product.name === "CerviCloud Ortho" ? "CerviCloud Pillow" : product.name === "LumiCloud Mask" ? "LumiCloud Sleep Mask" : product.name}
+          {product.name === "CerviCloud Ortho" ? "CerviCloud Pillow" : product.name === "LumiCloud Mask" ? "LumiCloud Eye Mask" : product.name}
         </h1>
         
         <p className="text-xl text-muted-foreground font-light italic">

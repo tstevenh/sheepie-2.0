@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!product) return {};
 
   return {
-    title: `${product.name === "CerviCloud Ortho" ? "CerviCloud Pillow" : product.name === "LumiCloud Mask" ? "LumiCloud Sleep Mask" : product.name} | Sheepie.`,
+    title: `${product.name === "CerviCloud Ortho" ? "CerviCloud Pillow" : product.name === "LumiCloud Mask" ? "LumiCloud Eye Mask" : product.name} | Sheepie.`,
     description: product.tagline, // Using the punchy tagline for meta desc
     openGraph: {
       images: [product.images[0]],

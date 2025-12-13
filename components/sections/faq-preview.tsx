@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 // We'll pick one from each category + general
 const featuredFAQs = [
   faqData.categories[0].items[0], // Calmi
-  faqData.categories[1].items[0], // LumiCloud Sleep Mask
+  faqData.categories[1].items[0], // LumiCloud Eye Mask
   faqData.categories[2].items[0], // Cervi
   faqData.categories[3].items[1], // Shipping
 ];
