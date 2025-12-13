@@ -3,6 +3,7 @@ import { Playfair_Display, Quicksand } from "next/font/google";
 import "./globals.css";
 import { ReactLenis } from "@/lib/lenis"; 
 import { BackgroundClouds } from "@/components/ui/background-clouds";
+import { Analytics } from "@vercel/analytics/react";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({
         <ReactLenis root>
           <BackgroundClouds />
           {children}
+          <Analytics />
         </ReactLenis>
       </body>
     </html>
