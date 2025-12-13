@@ -19,7 +19,7 @@ const productLifestyleMap: Record<string, string> = {
 
 export function ProductsClient() {
   return (
-    <main className="min-h-screen flex flex-col bg-white text-foreground selection:bg-primary/20">
+    <main className="min-h-screen flex flex-col bg-white text-foreground selection:bg-primary/20 overflow-x-hidden">
       <Navbar />
       
       {/* Cinematic Header */}

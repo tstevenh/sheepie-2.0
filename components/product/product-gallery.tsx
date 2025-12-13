@@ -44,9 +44,9 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
   }, [emblaApi, onSelect])
 
   return (
-    <div className="space-y-4 relative group">
+    <div className="space-y-4 relative group w-full max-w-full min-w-0">
       {/* Main Slider */}
-      <div className="overflow-hidden rounded-3xl bg-[#F8FAFC] border border-border/40 shadow-inner" ref={emblaRef}>
+      <div className="overflow-hidden rounded-3xl bg-[#F8FAFC] border border-border/40 shadow-inner w-full" ref={emblaRef}>
         <div className="flex">
           {images.map((src, index) => (
             <div className="flex-[0_0_100%] min-w-0 relative aspect-square md:aspect-[4/3]" key={index}>
