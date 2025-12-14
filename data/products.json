@@ -2,7 +2,8 @@
   {
     "slug": "cervicloud",
     "name": "CerviCloud Pillow",
-    "tagline": "Engineering the perfect spine alignment.",
+    "tagline": "Spine alignment, perfected.",
+    "originalPrice": "IDR 990.000",
     "price": "IDR 880.000",
     "description": "Transform your rest with the CerviCloud Pillow. Its 4D Butterfly shape cradles your neck to maintain natural cervical alignment, relieving persistent pressure points. Infused with thermal diffusion particles and wrapped in Ice-Silk fabric, it offers expansive, cooling support that adapts to your every move.",
     "benefits": [
@@ -26,12 +27,14 @@
     "variants": [
       {
         "name": "Pillow",
+        "originalPrice": "IDR 990.000",
         "price": "IDR 880.000",
         "shopeeUrl": "https://shopee.co.id/Sheepie-CerviCloud-Bantal-Cervical-Pillow-Bantal-Kesehatan-Memory-Foam-untuk-Leher-dan-bahu-i.669518207.25697801158?extraParams=%7B%22display_model_id%22%3A340273398976%7D",
         "tokopediaUrl": "https://www.tokopedia.com/sheepie/sheepie-cervicloud-bantal-cervical-pillow-ergonomis-64x35x12cm-untuk-leher-tulang-belakang-dengan-cooling-fabric-slow-rebound-memory-foam-bed-1732026911304484377"
       },
       {
         "name": "Case Only",
+        "originalPrice": "IDR 198.000",
         "price": "IDR 198.000",
         "shopeeUrl": "https://shopee.co.id/-SARUNG-ONLY-Sheepie-CerviCloud-Cervical-Pillow-Bantal-Kesehatan-Memory-Foam-for-Leher-dan-bahu-i.669518207.43809302912?extraParams=%7B%22display_model_id%22%3A265779943937%7D",
         "tokopediaUrl": "https://www.tokopedia.com/sheepie/sarung-only-sheepie-cervicloud-cervical-pillow-bantal-kesehatan-memory-foam-for-leher-dan-bahu-1732003397370480153"
@@ -42,6 +45,7 @@
     "slug": "lumicloud",
     "name": "LumiCloud Eye Mask",
     "tagline": "The weightless blackout experience.",
+    "originalPrice": "IDR 289.000",
     "price": "IDR 175.000",
     "description": "Engineered for the heat, crafted for the soul. LumiCloud combines premium Soft Cotton Fabric with 3D contoured eye cavities to deliver 100% blackout isolation without pressure. Breathable, adjustable, and featherlight—it's not just a mask, it's a signal to your brain that it's time to rest.",
     "benefits": [
@@ -68,6 +72,7 @@
     "slug": "calmicloud",
     "name": "CalmiCloud Earplugs",
     "tagline": "Moldable silence for a chaotic world.",
+    "originalPrice": "IDR 99.000",
     "price": "IDR 49.000",
     "description": "Achieve profound silence without the invasive pressure. CalmiCloud is crafted from medical-grade, moldable silicone that seals your outer ear canal perfectly. Water-resistant and reusable, it blocks out snoring, traffic, and distraction—whether you're sleeping, swimming, or seeking deep focus.",
     "benefits": [

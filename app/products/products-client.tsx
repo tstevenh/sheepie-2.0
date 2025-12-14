@@ -135,7 +135,14 @@ function ParallaxProductRow({ product, index }: { product: any, index: number })
              </p>
 
              <div className={`flex items-center gap-6 pt-2 ${isEven ? '' : 'justify-end'}`}>
-               <span className="text-3xl font-display text-primary">{product.price}</span>
+               <div className="flex items-baseline gap-3">
+                 {product.originalPrice && (
+                   <span className="text-lg text-muted-foreground/50 line-through decoration-muted-foreground/50 font-light">
+                     {product.originalPrice}
+                   </span>
+                 )}
+                 <span className="text-3xl font-display text-primary">{product.price}</span>
+               </div>
                <Button className="rounded-full h-14 px-8 text-base shadow-lg shadow-primary/20 hover:scale-105 transition-all duration-300" asChild>
                  <Link href={`/products/${product.slug}`}>
                    View Details <ArrowRight className="ml-2 w-4 h-4" />

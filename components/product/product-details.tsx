@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 interface ProductVariant {
   name: string;
   price: string;
+  originalPrice?: string;
   shopeeUrl: string;
   tokopediaUrl: string;
 }
@@ -19,6 +20,7 @@ interface Product {
   name: string;
   tagline: string;
   price: string;
+  originalPrice?: string;
   description: string;
   benefits: string[];
   shopeeUrl: string;
@@ -32,6 +34,7 @@ export function ProductDetails({ product }: { product: Product }) {
   );
 
   const currentPrice = selectedVariant ? selectedVariant.price : product.price;
+  const currentOriginalPrice = selectedVariant ? selectedVariant.originalPrice : product.originalPrice;
   const currentShopeeUrl = selectedVariant ? selectedVariant.shopeeUrl : product.shopeeUrl;
   const currentTokopediaUrl = selectedVariant ? selectedVariant.tokopediaUrl : product.tokopediaUrl;
 
@@ -56,8 +59,15 @@ export function ProductDetails({ product }: { product: Product }) {
           {product.tagline}
         </p>
         
-        <div className="text-3xl font-display font-medium text-primary pt-2">
-          {currentPrice}
+        <div className="flex items-baseline gap-3 pt-2">
+          {currentOriginalPrice && (
+            <span className="text-xl text-muted-foreground/60 line-through decoration-muted-foreground/60 decoration-1 font-light">
+              {currentOriginalPrice}
+            </span>
+          )}
+          <div className="text-3xl font-display font-medium text-primary">
+            {currentPrice}
+          </div>
         </div>
       </div>
 
