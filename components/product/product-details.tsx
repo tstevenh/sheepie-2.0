@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { BuyButtons } from "@/components/product/buy-buttons";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Check, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface ProductVariant {
   name: string;
@@ -29,6 +29,9 @@ interface Product {
 }
 
 export function ProductDetails({ product }: { product: Product }) {
+  const t = useTranslations('ProductDetails');
+  const tProd = useTranslations('Products');
+
   const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(
     product.variants ? product.variants[0] : null
   );
@@ -43,7 +46,7 @@ export function ProductDetails({ product }: { product: Product }) {
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <Badge variant="secondary" className="bg-primary/5 text-primary hover:bg-primary/10 transition-colors px-3 py-1 text-xs font-semibold tracking-wider uppercase border-none">
-            Essential Collection
+            {t('collection')}
           </Badge>
           <div className="flex items-center gap-1 text-amber-400 text-xs font-bold">
             <Star className="w-3 h-3 fill-current" />
@@ -52,11 +55,11 @@ export function ProductDetails({ product }: { product: Product }) {
         </div>
         
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-primary leading-tight">
-          {product.name === "CerviCloud Ortho" ? "CerviCloud Pillow" : product.name === "LumiCloud Mask" ? "LumiCloud Eye Mask" : product.name}
+          {tProd(`${product.slug}.name` as any)}
         </h1>
         
         <p className="text-xl text-muted-foreground font-light italic">
-          {product.tagline}
+          {tProd(`${product.slug}.tagline` as any)}
         </p>
         
         <div className="flex items-baseline gap-3 pt-2">
@@ -74,7 +77,7 @@ export function ProductDetails({ product }: { product: Product }) {
       {/* Variant Selector */}
       {product.variants && (
         <div className="space-y-3">
-          <span className="text-sm font-bold text-primary/60 uppercase tracking-widest">Select Option</span>
+          <span className="text-sm font-bold text-primary/60 uppercase tracking-widest">{t('selectOption')}</span>
           <div className="flex flex-wrap gap-3">
             {product.variants.map((variant) => (
               <button
@@ -97,18 +100,18 @@ export function ProductDetails({ product }: { product: Product }) {
       <div className="w-full h-px bg-border/50" />
 
       <div className="prose prose-lg text-muted-foreground font-light leading-relaxed">
-        <p>{product.description}</p>
+        <p>{tProd(`${product.slug}.description` as any)}</p>
       </div>
 
       <div className="space-y-4">
-        <h3 className="font-display font-medium text-lg text-primary">Key Benefits</h3>
+        <h3 className="font-display font-medium text-lg text-primary">{t('keyBenefits')}</h3>
         <ul className="space-y-3">
-          {product.benefits.map((benefit, i) => (
+          {[0, 1, 2, 3].map((i) => (
             <li key={i} className="flex items-start gap-3 text-sm md:text-base text-foreground/80 group">
               <div className="mt-1 bg-green-50 rounded-full p-1 text-green-600 group-hover:bg-green-100 transition-colors">
                 <Check className="w-3 h-3" />
               </div>
-              <span>{benefit}</span>
+              <span>{tProd(`${product.slug}.benefits.${i}` as any)}</span>
             </li>
           ))}
         </ul>
@@ -122,7 +125,7 @@ export function ProductDetails({ product }: { product: Product }) {
           className="w-full"
         />
         <p className="text-center text-xs text-muted-foreground/60">
-          Secure checkout via your favorite marketplace
+          {t('secureCheckout')}
         </p>
       </div>
     </div>

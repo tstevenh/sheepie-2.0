@@ -8,6 +8,7 @@
   "nav": [
     { "label": "Home", "href": "/" },
     { "label": "Collection", "href": "/products" },
+    { "label": "Journal", "href": "/blog" },
     { "label": "About", "href": "/about" }
   ]
 }

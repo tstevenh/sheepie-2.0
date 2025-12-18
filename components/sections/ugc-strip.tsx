@@ -3,6 +3,7 @@
 import Image from "next/image";
 import photoshoot from "@/data/photoshoot.json";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 // Split images into two rows for the marquee
 const mid = Math.ceil(photoshoot.length / 2);
@@ -10,14 +11,16 @@ const row1 = photoshoot.slice(0, mid);
 const row2 = photoshoot.slice(mid);
 
 export function UGCStrip() {
+  const t = useTranslations('UGCStrip');
+
   return (
     <section className="py-24 bg-white overflow-hidden space-y-8">
       <div className="container mx-auto px-4 text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-display font-medium text-primary">
-          Life with Sheepie
+          {t('title')}
         </h2>
         <p className="text-muted-foreground mt-4 font-light text-lg">
-          Join thousands of well-rested sleepers. #SleepWithSheepie
+          {t('subtitle')}
         </p>
       </div>
 

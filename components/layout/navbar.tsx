@@ -3,7 +3,9 @@
 import Link from "next/link";
 import siteData from "@/data/site.json";
 import { Button } from "@/components/ui/button";
-import { Menu, ShoppingBag } from "lucide-react";
+import { Menu } from "lucide-react";
+import { LanguageSwitcher } from "./language-switcher";
+import { useTranslations, useLocale } from "next-intl";
 import {
   Sheet,
   SheetContent,
@@ -14,21 +16,34 @@ import {
 } from "@/components/ui/sheet";
 
 export function Navbar() {
+  const t = useTranslations('Navbar');
+  const locale = useLocale();
+
+  // Helper to get localized path
+  const getPath = (path: string) => `/${locale}${path === '/' ? '' : path}`;
+
+  const navItems = [
+    { label: t('home'), href: "/" },
+    { label: t('collection'), href: "/products" },
+    { label: t('journal'), href: "/blog" },
+    { label: t('about'), href: "/about" },
+  ];
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         
         {/* Logo */}
-        <Link href="/" className="font-display text-2xl font-bold text-primary">
+        <Link href={getPath("/")} className="font-display text-2xl font-bold text-primary">
           {siteData.name}
         </Link>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8 items-center">
-          {siteData.nav.map((item) => (
+          {navItems.map((item) => (
             <Link 
               key={item.href} 
-              href={item.href}
+              href={getPath(item.href)}
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               {item.label}
@@ -36,17 +51,19 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex">
+        {/* Desktop CTA & Switcher */}
+        <div className="hidden md:flex items-center gap-4">
+          <LanguageSwitcher />
           <Button asChild size="sm">
-            <Link href="/products">
-              Shop Now
+            <Link href={getPath("/products")}>
+              {t('shopNow')}
             </Link>
           </Button>
         </div>
         
         {/* Mobile Menu */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitcher />
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="-mr-2">
@@ -62,10 +79,10 @@ export function Navbar() {
               </SheetHeader>
               
               <div className="flex flex-col gap-4 py-4">
-                {siteData.nav.map((item) => (
+                {navItems.map((item) => (
                   <SheetClose key={item.href} asChild>
                     <Link
-                      href={item.href}
+                      href={getPath(item.href)}
                       className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors py-2"
                     >
                       {item.label}
@@ -77,8 +94,8 @@ export function Navbar() {
               <div className="mt-8">
                 <SheetClose asChild>
                   <Button asChild className="w-full h-12 text-base shadow-lg shadow-primary/20">
-                    <Link href="/products">
-                      Shop All Essentials
+                    <Link href={getPath("/products")}>
+                      {t('shopAll')}
                     </Link>
                   </Button>
                 </SheetClose>

@@ -2,29 +2,17 @@
 
 import { motion } from "framer-motion";
 import { Coffee, Smartphone, Wind, CheckCircle2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-const rituals = [
-  {
-    icon: Smartphone,
-    title: "The Digital Sunset",
-    desc: "Blue light suppresses melatonin. 60 minutes before bed, switch to 'Night Shift' mode or, better yet, total darkness.",
-    action: "Pair with LumiCloud for 100% optical isolation."
-  },
-  {
-    icon: Coffee,
-    title: "The Caffeine Cutoff",
-    desc: "Caffeine has a half-life of 5-6 hours. Your last cup should be at 2 PM to ensure your adenosine receptors are ready for sleep.",
-    action: "If you're sensitive, CalmiCloud helps block the 'noise' of a racing heart."
-  },
-  {
-    icon: Wind,
-    title: "The 4-7-8 Breath",
-    desc: "Inhale for 4, hold for 7, exhale for 8. This signals your parasympathetic nervous system to downregulate cortisol.",
-    action: "CerviCloud opens your airways for deeper, unobstructed breathing."
-  }
+const ritualKeys = [
+  { icon: Smartphone, id: "digital" },
+  { icon: Coffee, id: "caffeine" },
+  { icon: Wind, id: "breath" }
 ];
 
 export function SleepAcademy() {
+  const t = useTranslations('SleepAcademy');
+
   return (
     <section className="py-24 bg-[#F8FAFC]">
       <div className="container mx-auto px-4">
@@ -32,20 +20,21 @@ export function SleepAcademy() {
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Header */}
           <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24 mb-12 lg:mb-0">
-             <span className="text-primary/60 text-xs font-bold tracking-widest uppercase">The Sleep Academy</span>
+             <span className="text-primary/60 text-xs font-bold tracking-widest uppercase">{t('label')}</span>
              <h2 className="text-4xl md:text-5xl font-display font-medium text-primary leading-tight">
-               Rituals for <br/>
-               <span className="italic text-primary/70">Restoration.</span>
+               {t.rich('title', {
+                 br: () => <br/>,
+                 span1: (chunks) => <span className="italic text-primary/70">{chunks}</span>
+               })}
              </h2>
              <p className="text-muted-foreground font-light leading-relaxed">
-               Great sleep isn't just about what you buy. It's about what you do. 
-               Adopt these simple evidence-based habits to elevate your night.
+               {t('description')}
              </p>
           </div>
 
           {/* Cards */}
           <div className="lg:col-span-8 grid gap-6">
-            {rituals.map((item, i) => (
+            {ritualKeys.map((item, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -59,13 +48,13 @@ export function SleepAcademy() {
                      <item.icon className="w-6 h-6" />
                    </div>
                    <div className="space-y-3">
-                     <h3 className="text-xl font-display font-medium text-foreground">{item.title}</h3>
+                     <h3 className="text-xl font-display font-medium text-foreground">{t(`rituals.${item.id}.title` as any)}</h3>
                      <p className="text-muted-foreground font-light leading-relaxed">
-                       {item.desc}
+                       {t(`rituals.${item.id}.desc` as any)}
                      </p>
                      <div className="flex items-center gap-2 text-sm text-primary font-medium bg-primary/5 w-fit px-3 py-1 rounded-full">
                        <CheckCircle2 className="w-4 h-4" />
-                       {item.action}
+                       {t(`rituals.${item.id}.action` as any)}
                      </div>
                    </div>
                  </div>

@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import products from "@/data/products.json";
+import { useTranslations, useLocale } from "next-intl";
 
 // Specific image overrides for the Trinity Showcase
 const showcaseImages: Record<string, string> = {
@@ -16,6 +17,10 @@ const showcaseImages: Record<string, string> = {
 };
 
 export function ProductShowcase() {
+  const t = useTranslations('ProductShowcase');
+  const locale = useLocale();
+  const getPath = (path: string) => `/${locale}${path}`;
+
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -31,14 +36,16 @@ export function ProductShowcase() {
           {/* Intro Card */}
           <div className="relative h-[70vh] w-[80vw] md:w-[40vw] flex-shrink-0 flex flex-col justify-center text-white z-10">
             <h2 className="text-6xl md:text-8xl font-display font-medium leading-tight mb-8">
-              The <br/> Trinity <br/> of Sleep.
+              {t.rich('title', {
+                br: () => <br/>
+              })}
             </h2>
             <p className="text-xl md:text-2xl text-white/60 font-light max-w-md">
-              Three essentials designed to conquer the three enemies of rest: Noise, Light, and Discomfort.
+              {t('subtitle')}
             </p>
             <div className="mt-12 flex gap-4">
                <div className="h-px w-24 bg-white/20 my-auto" />
-               <span className="text-xs uppercase tracking-widest text-white/40">Scroll to Explore</span>
+               <span className="text-xs uppercase tracking-widest text-white/40">{t('scroll')}</span>
             </div>
           </div>
 
@@ -49,9 +56,9 @@ export function ProductShowcase() {
 
           {/* CTA Card */}
            <div className="relative h-[70vh] w-[80vw] md:w-[40vw] flex-shrink-0 flex flex-col justify-center items-center text-center text-white bg-white/5 rounded-[3rem] backdrop-blur-sm border border-white/10">
-              <h3 className="text-4xl font-display mb-6">Ready to upgrade your night?</h3>
+              <h3 className="text-4xl font-display mb-6">{t('ctaTitle')}</h3>
               <Button size="lg" className="rounded-full px-12 h-16 text-lg bg-white text-black hover:bg-white/90" asChild>
-                <Link href="/products">Shop All Essentials</Link>
+                <Link href={getPath("/products")}>{t('ctaButton')}</Link>
               </Button>
            </div>
 
@@ -62,17 +69,23 @@ export function ProductShowcase() {
 }
 
 function ProductSlide({ product, index }: { product: any, index: number }) {
+  const t = useTranslations('Products');
+  const tShowcase = useTranslations('ProductShowcase');
+  const locale = useLocale();
+  const getPath = (path: string) => `/${locale}${path}`;
+
   // Use the override image if it exists, otherwise fall back to the first product image
   const displayImage = showcaseImages[product.slug] || product.images[0];
+  const productName = t(`${product.slug}.name` as any);
 
   return (
     <div className="group relative h-[70vh] w-[85vw] md:w-[50vw] flex-shrink-0 bg-white rounded-[3rem] overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
-      <Link href={`/products/${product.slug}`} className="block h-full w-full">
+      <Link href={getPath(`/products/${product.slug}`)} className="block h-full w-full">
         {/* Image Half */}
         <div className="absolute inset-0 h-full w-full">
            <Image
             src={displayImage}
-            alt={product.name}
+            alt={productName}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"
             sizes="(max-width: 768px) 80vw, 50vw"
@@ -85,13 +98,13 @@ function ProductSlide({ product, index }: { product: any, index: number }) {
           <div className="flex items-end justify-between">
             <div className="space-y-2">
               <span className="inline-block px-3 py-1 rounded-full border border-white/30 bg-black/20 backdrop-blur-md text-xs font-bold uppercase tracking-widest mb-2">
-                0{index + 1} — {product.slug === 'calmicloud' ? 'Silence' : product.slug === 'lumicloud' ? 'Darkness' : 'Comfort'}
+                0{index + 1} — {tShowcase(`category.${product.slug}` as any)}
               </span>
               <h3 className="text-4xl md:text-6xl font-display font-medium leading-none">
-                {product.name === "CerviCloud Ortho" ? "CerviCloud Pillow" : product.name === "LumiCloud Mask" ? "LumiCloud Eye Mask" : product.name}
+                {productName}
               </h3>
               <p className="text-lg md:text-xl text-white/80 font-light max-w-md pt-2 line-clamp-2">
-                {product.tagline}
+                {t(`${product.slug}.tagline` as any)}
               </p>
             </div>
             

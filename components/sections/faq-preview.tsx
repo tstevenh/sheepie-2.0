@@ -3,39 +3,47 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
-import faqData from "@/data/faqs.json";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useTranslations, useLocale } from "next-intl";
 
-// Flatten the structure to pick a few top FAQs for the homepage
-// We'll pick one from each category + general
-const featuredFAQs = [
-  faqData.categories[0].items[0], // Calmi
-  faqData.categories[1].items[0], // LumiCloud Eye Mask
-  faqData.categories[2].items[0], // Cervi
-  faqData.categories[3].items[1], // Shipping
+// Define keys to look up
+const faqKeys = [
+  "calmi.reusable",
+  "lumi.eyelashes",
+  "cervi.firmness",
+  "shipping.duration"
 ];
 
 export function FAQPreview() {
+  const t = useTranslations('FAQPreview');
+  const tFAQ = useTranslations('FAQs');
+  const locale = useLocale();
+  const getPath = (path: string) => `/${locale}${path}`;
+
   return (
     <section className="py-24 bg-[#F8FAFC]">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="text-center mb-12">
-          <span className="text-primary/60 text-xs font-bold tracking-widest uppercase">Common Questions</span>
+          <span className="text-primary/60 text-xs font-bold tracking-widest uppercase">{t('label')}</span>
           <h2 className="text-4xl font-display font-medium text-primary mt-2">
-            Curious about better sleep?
+            {t('title')}
           </h2>
         </div>
         
         <div className="space-y-4">
-          {featuredFAQs.map((faq, i) => (
-            <FAQItem key={i} question={faq.question} answer={faq.answer} />
+          {faqKeys.map((key, i) => (
+            <FAQItem 
+              key={i} 
+              question={tFAQ(`${key}.q` as any)} 
+              answer={tFAQ(`${key}.a` as any)} 
+            />
           ))}
         </div>
 
         <div className="text-center mt-12">
           <Button variant="link" className="text-primary text-lg" asChild>
-            <Link href="/faq">View all FAQs &rarr;</Link>
+            <Link href={getPath("/faq")}>{t('viewAll')} &rarr;</Link>
           </Button>
         </div>
       </div>

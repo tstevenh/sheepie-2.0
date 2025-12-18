@@ -5,8 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useTranslations, useLocale } from "next-intl";
 
 export function Hero() {
+  const t = useTranslations('Hero');
+  const locale = useLocale();
+  const getPath = (path: string) => `/${locale}${path}`;
+
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -23,7 +28,7 @@ export function Hero() {
       {/* Dynamic Background Text (Subtle Layer) */}
       <div className="absolute top-[5%] left-0 w-full overflow-hidden opacity-[0.03] select-none pointer-events-none">
         <h1 className="text-[20vw] font-display font-black whitespace-nowrap text-primary animate-marquee">
-          DEEP SLEEP · RESTORE · DREAM · DEEP SLEEP · RESTORE · DREAM ·
+          {t('bgText')}
         </h1>
       </div>
 
@@ -40,13 +45,15 @@ export function Hero() {
             <div className="flex items-center gap-4">
                <div className="h-px w-12 bg-primary/40" />
                <span className="text-primary/80 text-sm font-bold tracking-[0.2em] uppercase font-body">
-                 The New Standard of Rest
+                 {t('subtitle')}
                </span>
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-medium text-primary leading-[0.9] tracking-tighter">
-              Sleep is <br/>
-              <span className="italic font-light text-primary/70">The Foundation.</span>
+              {t.rich('title', {
+                br: () => <br/>,
+                span1: (chunks) => <span className="italic font-light text-primary/70">{chunks}</span>
+              })}
             </h1>
           </motion.div>
           
@@ -56,9 +63,10 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-md"
           >
-            We don't just sell pillows. We engineer silence, darkness, and alignment.
-            <br />
-            <span className="font-medium text-foreground">Prepare for a clearer tomorrow.</span>
+            {t.rich('description', {
+                br: () => <br/>,
+                span1: (chunks) => <span className="font-medium text-foreground">{chunks}</span>
+            })}
           </motion.p>
           
           <motion.div 
@@ -68,10 +76,10 @@ export function Hero() {
             className="flex flex-wrap gap-4 pt-2"
           >
             <Button size="lg" className="rounded-full h-14 px-8 text-base bg-primary text-white hover:bg-primary/90 shadow-xl hover:scale-105 transition-all duration-300" asChild>
-              <Link href="#products">Explore the Collection</Link>
+              <Link href="#products">{t('ctaPrimary')}</Link>
             </Button>
             <Button size="lg" variant="ghost" className="rounded-full h-14 px-8 text-base hover:bg-primary/5 text-primary" asChild>
-              <Link href="/about">Our Philosophy</Link>
+              <Link href={getPath("/about")}>{t('ctaSecondary')}</Link>
             </Button>
           </motion.div>
         </div>
@@ -100,10 +108,10 @@ export function Hero() {
              >
                 <div className="flex items-center gap-4 mb-2">
                   <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-primary/60">Now Trending</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-primary/60">{t('nowTrending')}</span>
                 </div>
                 <p className="font-display text-xl text-primary leading-tight">
-                  "The only pillow that actually stopped my neck pain."
+                  {t('testimonial')}
                 </p>
              </motion.div>
            </motion.div>
@@ -115,7 +123,7 @@ export function Hero() {
         style={{ opacity }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-primary/40">Scroll to Dream</span>
+        <span className="text-[10px] uppercase tracking-[0.3em] text-primary/40">{t('scroll')}</span>
         <motion.div 
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}

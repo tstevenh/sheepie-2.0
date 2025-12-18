@@ -4,7 +4,7 @@ import { ProductGallery } from "@/components/product/product-gallery";
 import { ProductDetails } from "@/components/product/product-details";
 import products from "@/data/products.json";
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 // This is required for SSG with dynamic routes
 export async function generateStaticParams() {
@@ -13,27 +13,32 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string, locale: string }> }) {
+  const { slug, locale } = await params;
   const product = products.find((p) => p.slug === slug);
   if (!product) return {};
 
+  const t = await getTranslations({locale, namespace: 'Products'});
+
   return {
-    title: `${product.name === "CerviCloud Ortho" ? "CerviCloud Pillow" : product.name === "LumiCloud Mask" ? "LumiCloud Eye Mask" : product.name} | Sheepie.`,
-    description: product.tagline, // Using the punchy tagline for meta desc
+    title: `${t(`${slug}.name` as any)} | Sheepie.`,
+    description: t(`${slug}.tagline` as any),
     openGraph: {
       images: [product.images[0]],
     },
   };
 }
 
-export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function ProductPage({ params }: { params: Promise<{ slug: string, locale: string }> }) {
+  const { slug, locale } = await params;
   const product = products.find((p) => p.slug === slug);
 
   if (!product) {
     notFound();
   }
+
+  const t = await getTranslations({locale, namespace: 'Products'});
+  const translatedName = t(`${slug}.name` as any);
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden w-full max-w-[100vw]">
@@ -44,7 +49,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           
           {/* Left Column: Large Scrolling Gallery (Editorial Style) */}
           <div className="lg:col-span-7 w-full min-w-0">
-             <ProductGallery images={product.images} productName={product.name} />
+             <ProductGallery images={product.images} productName={translatedName} />
           </div>
           
           {/* Right Column: Sticky Product Info (Client Component for Variants) */}

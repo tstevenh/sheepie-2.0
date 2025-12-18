@@ -1,13 +1,8 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import Image from "next/image";
-import photoshoot from "@/data/photoshoot.json";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Our Philosophy | Sheepie.",
-  description: "We believe rest is the foundation of a clearer tomorrow. Learn how we bridge the gap between ergonomic science and cloud-like comfort.",
-};
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 // Pick a few distinct images for the grid to tell a story
 const aboutImages = [
@@ -19,21 +14,34 @@ const aboutImages = [
   "/images/edited/DSC01225.JPG", // Lifestyle
 ];
 
+export async function generateMetadata({params}: {params: Promise<{locale: string}>}) {
+  const { locale } = await params;
+  const t = await getTranslations({locale, namespace: 'AboutPage'});
+ 
+  return {
+    title: t('metaTitle'),
+    description: t('metaDescription')
+  };
+}
+
 export default function AboutPage() {
+  const t = useTranslations('AboutPage');
+
   return (
     <main className="min-h-screen flex flex-col bg-white">
       <Navbar />
       
       <div className="container mx-auto px-4 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center space-y-8 mb-24">
-          <span className="text-primary/60 text-sm font-bold tracking-widest uppercase">Our Philosophy</span>
+          <span className="text-primary/60 text-sm font-bold tracking-widest uppercase">{t('label')}</span>
           <h1 className="font-display text-5xl md:text-7xl font-medium text-primary leading-[1.1]">
-            Rest is not a Luxury.<br/>
-            <span className="italic text-primary/70">It's a Foundation.</span>
+            {t.rich('title', {
+              br: () => <br/>,
+              span1: (chunks) => <span className="italic text-primary/70">{chunks}</span>
+            })}
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed max-w-2xl mx-auto">
-            We believe that a clearer tomorrow starts with the night before. 
-            Sheepie was born to bridge the gap between ergonomic science and the gentle comfort you crave.
+            {t('intro')}
           </p>
         </div>
 
@@ -53,13 +61,16 @@ export default function AboutPage() {
         </div>
 
         <div className="max-w-3xl mx-auto prose prose-lg prose-headings:font-display prose-headings:font-medium prose-p:font-light prose-p:text-muted-foreground text-center">
-          <h2>Designed for Every Sleeper</h2>
+          <h2>{t('sectionTitle')}</h2>
           <p>
-            We spent months obsessed with density, rebound rates, and fabric breathability. 
-            Whether you need the cervical precision of the <strong>CerviCloud Pillow</strong>, the silence of our <strong>CalmiCloud</strong> earplugs, or the total darkness of the <strong>LumiCloud Eye Mask</strong>, every curve is intentional.
+            {t.rich('p1', {
+              strong1: (chunks) => <strong>{chunks}</strong>,
+              strong2: (chunks) => <strong>{chunks}</strong>,
+              strong3: (chunks) => <strong>{chunks}</strong>
+            })}
           </p>
           <p>
-            We don't just sell sleep products. We sell the feeling of waking up ready.
+            {t('p2')}
           </p>
         </div>
       </div>

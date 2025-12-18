@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import siteData from "@/data/site.json";
 import { Instagram } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
 
 const getSocialIcon = (platform: string) => {
   switch (platform) {
@@ -30,6 +33,18 @@ const getSocialIcon = (platform: string) => {
 };
 
 export function Footer() {
+  const t = useTranslations('Footer');
+  const tNav = useTranslations('Navbar');
+  const locale = useLocale();
+  const getPath = (path: string) => `/${locale}${path}`;
+
+  // Reconstruct nav items from translations to ensure they match navbar
+  const navItems = [
+    { label: tNav('home'), href: "/" },
+    { label: tNav('collection'), href: "/products" },
+    { label: tNav('about'), href: "/about" },
+  ];
+
   return (
     <footer className="bg-primary text-primary-foreground py-12 relative z-50">
       <div className="container mx-auto px-4">
@@ -37,16 +52,16 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-display text-2xl font-bold">{siteData.name}</h3>
             <p className="text-secondary/80 text-sm max-w-xs mx-auto md:mx-0 font-light leading-relaxed">
-              {siteData.description}
+              {t('description')}
             </p>
           </div>
           
           <div>
-            <h4 className="font-bold mb-4 tracking-widest text-xs uppercase">Explore</h4>
+            <h4 className="font-bold mb-4 tracking-widest text-xs uppercase">{t('explore')}</h4>
             <ul className="space-y-3 text-sm text-secondary/80 font-light">
-              {siteData.nav.filter(item => item.href !== '/faq' && item.href !== '/contact').map((item) => (
+              {navItems.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="hover:text-white transition-colors">
+                  <Link href={getPath(item.href)} className="hover:text-white transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -55,15 +70,15 @@ export function Footer() {
           </div>
           
           <div>
-            <h4 className="font-bold mb-4 tracking-widest text-xs uppercase">Support</h4>
+            <h4 className="font-bold mb-4 tracking-widest text-xs uppercase">{t('support')}</h4>
             <ul className="space-y-3 text-sm text-secondary/80 font-light">
-              <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href={getPath("/faq")} className="hover:text-white transition-colors">{t('faq')}</Link></li>
+              <li><Link href={getPath("/contact")} className="hover:text-white transition-colors">{t('contact')}</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-bold mb-4 tracking-widest text-xs uppercase">Follow Us</h4>
+            <h4 className="font-bold mb-4 tracking-widest text-xs uppercase">{t('follow')}</h4>
             <div className="flex gap-4 justify-center md:justify-start">
               {siteData.socials.instagram && (
                 <a 
@@ -92,7 +107,7 @@ export function Footer() {
         </div>
         
         <div className="border-t border-white/10 mt-16 pt-8 text-center text-xs text-white/40 font-light">
-          © {new Date().getFullYear()} Sheepie. All rights reserved.
+          {t('copyright', { year: new Date().getFullYear() })}
         </div>
       </div>
     </footer>

@@ -6,13 +6,11 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { Moon, VolumeX, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 
 const scienceSteps = [
   {
     id: "alignment",
-    title: "Cervical Neutrality",
-    subtitle: "The Science of Alignment",
-    description: "Misalignment compresses nerves and restricts blood flow. Our ergonomic contours maintain the natural C-curve of your spine, ensuring zero-gravity support.",
     icon: Activity,
     image: "/images/edited/DSC01139.JPG",
     accent: "text-white",
@@ -20,9 +18,6 @@ const scienceSteps = [
   },
   {
     id: "darkness",
-    title: "Circadian Synchronization",
-    subtitle: "The Science of Darkness",
-    description: "Light pollution triggers micro-arousals that fragment your REM cycles. Our 100% blackout engineering signals your pineal gland to produce melatonin instantly.",
     icon: Moon,
     image: "/images/edited/DSC01058.JPG", 
     accent: "text-blue-200",
@@ -30,9 +25,6 @@ const scienceSteps = [
   },
   {
     id: "silence",
-    title: "Sonic Hygiene",
-    subtitle: "The Science of Silence",
-    description: "Your brain processes sound even while asleep. We dampen ambient noise by 28dB, smoothing the sonic landscape to prevent cortisol spikes during the night.",
     icon: VolumeX,
     image: "/images/edited/DSC01316.JPG", 
     accent: "text-indigo-200",
@@ -41,6 +33,10 @@ const scienceSteps = [
 ];
 
 export function ScienceScroll() {
+  const t = useTranslations('ScienceScroll');
+  const locale = useLocale();
+  const getPath = (path: string) => `/${locale}${path}`;
+  
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeStep, setActiveStep] = useState(0);
 
@@ -73,7 +69,7 @@ export function ScienceScroll() {
              >
                <Image 
                  src={scienceSteps[activeStep].image} 
-                 alt={scienceSteps[activeStep].title} 
+                 alt={t(`steps.${scienceSteps[activeStep].id}.subtitle` as any)} 
                  fill 
                  className="object-cover opacity-80"
                  priority
@@ -102,20 +98,22 @@ export function ScienceScroll() {
                   <div className="p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/10">
                     <step.icon className="w-6 h-6" />
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-[0.2em]">Method 0{index + 1}</span>
+                  <span className="text-xs font-bold uppercase tracking-[0.2em]">{t('method', {index: index + 1})}</span>
                 </div>
                 
                 <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight">
-                  {step.subtitle}
+                  {t(`steps.${step.id}.subtitle` as any)}
                 </h3>
                 
                 <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed">
-                  {step.description}
+                  {t(`steps.${step.id}.description` as any)}
                 </p>
 
                 <div className="pt-4">
                   <Button variant="outline" className="rounded-full h-12 px-8 border-white/20 bg-transparent text-white hover:bg-white hover:text-black transition-all duration-300" asChild>
-                    <Link href={step.productLink}>Explore {step.id === 'darkness' ? 'LumiCloud Eye Mask' : step.id === 'silence' ? 'CalmiCloud' : 'CerviCloud Pillow'}</Link>
+                    <Link href={getPath(step.productLink)}>
+                        {t('explore', {product: t(`steps.${step.id}.productName` as any)})}
+                    </Link>
                   </Button>
                 </div>
              </motion.div>

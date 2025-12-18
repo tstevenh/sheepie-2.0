@@ -1,0 +1,274 @@
+{
+  "Navbar": {
+    "home": "Beranda",
+    "collection": "Koleksi",
+    "about": "Tentang Kami",
+    "journal": "Jurnal",
+    "shopNow": "Belanja Sekarang",
+    "shopAll": "Belanja Semua Produk"
+  },
+  "Blog": {
+    "metaTitle": "Jurnal | Sheepie.",
+    "metaDescription": "Wawasan tentang ilmu tidur, kesehatan, dan seni beristirahat.",
+    "title": "Jurnal.",
+    "subtitle": "Catatan tentang tidur, sains, dan keheningan.",
+    "readMore": "Baca Artikel",
+    "back": "Kembali ke Jurnal",
+    "writtenBy": "Ditulis oleh",
+    "publishedOn": "Diterbitkan pada"
+  },
+  "Hero": {
+    "subtitle": "Standar Baru Istirahat",
+    "title": "Tidur adalah <br></br><span1>Pondasi.</span1>",
+    "description": "Kami tidak sekadar menjual bantal. Kami merekayasa keheningan, kegelapan, dan keselarasan. <br></br><span1>Bersiaplah untuk hari esok yang lebih cerah.</span1>",
+    "ctaPrimary": "Jelajahi Koleksi",
+    "ctaSecondary": "Filosofi Kami",
+    "testimonial": "\"Satu-satunya bantal yang benar-benar menghentikan sakit leher saya.\"",
+    "nowTrending": "Sedang Tren",
+    "scroll": "Gulir untuk Bermimpi",
+    "bgText": "TIDUR NYENYAK · PULIH · MIMPI · TIDUR NYENYAK · PULIH · MIMPI ·"
+  },
+  "TrustBar": {
+    "betterSleep": { "title": "Tidur Lebih Baik", "desc": "Desain ergonomis untuk istirahat maksimal." },
+    "quality": { "title": "Jaminan Kualitas", "desc": "Bahan premium, tahan lama." },
+    "shipping": { "title": "Pengiriman Cepat", "desc": "Dikirim ke seluruh Indonesia dalam hitungan hari." },
+    "community": { "title": "Dicintai Ribuan", "desc": "Bergabunglah dengan komunitas kami." }
+  },
+  "ScienceScroll": {
+    "method": "Metode 0{index}",
+    "explore": "Lihat {product}",
+    "steps": {
+      "alignment": {
+        "subtitle": "Ilmu Penyelarasan",
+        "description": "Posisi yang salah menekan saraf dan menghambat aliran darah. Kontur ergonomis kami menjaga lekukan alami tulang belakang Anda, memberikan dukungan tanpa beban.",
+        "productName": "Bantal CerviCloud"
+      },
+      "darkness": {
+        "subtitle": "Ilmu Kegelapan",
+        "description": "Polusi cahaya memicu rangsangan mikro yang memecah siklus REM Anda. Rekayasa 100% blackout kami memberi sinyal pada kelenjar pineal untuk memproduksi melatonin secara instan.",
+        "productName": "Masker Mata LumiCloud"
+      },
+      "silence": {
+        "subtitle": "Ilmu Keheningan",
+        "description": "Otak Anda memproses suara bahkan saat tidur. Kami meredam kebisingan hingga 28dB, memperhalus lanskap sonik untuk mencegah lonjakan kortisol di malam hari.",
+        "productName": "CalmiCloud"
+      }
+    }
+  },
+  "ProductShowcase": {
+    "title": "Tiga <br></br> Pilar <br></br> Tidur.",
+    "subtitle": "Tiga kebutuhan pokok yang dirancang untuk menaklukkan tiga musuh istirahat: Kebisingan, Cahaya, dan Ketidaknyamanan.",
+    "scroll": "Gulir untuk Menjelajah",
+    "ctaTitle": "Siap tingkatkan kualitas tidurmu?",
+    "ctaButton": "Belanja Semua Produk",
+    "category": {
+      "cervicloud": "Kenyamanan",
+      "lumicloud": "Kegelapan",
+      "calmicloud": "Keheningan"
+    }
+  },
+  "Products": {
+    "cervicloud": { "name": "Bantal CerviCloud", "tagline": "Penyelarasan tulang belakang, disempurnakan." },
+    "lumicloud": { "name": "Masker Mata LumiCloud", "tagline": "Pengalaman blackout tanpa beban." },
+    "calmicloud": { "name": "CalmiCloud Earplugs", "tagline": "Keheningan yang dapat dibentuk untuk dunia yang bising." }
+  },
+  "SleepAcademy": {
+    "label": "Akademi Tidur",
+    "title": "Ritual untuk <br></br> <span1>Pemulihan.</span1>",
+    "description": "Tidur yang nyenyak bukan hanya tentang apa yang Anda beli. Ini tentang apa yang Anda lakukan. Terapkan kebiasaan sederhana berbasis bukti ini untuk meningkatkan kualitas malam Anda.",
+    "rituals": {
+      "digital": {
+        "title": "Matahari Terbenam Digital",
+        "desc": "Cahaya biru menekan melatonin. 60 menit sebelum tidur, beralihlah ke mode 'Night Shift' atau, lebih baik lagi, kegelapan total.",
+        "action": "Pasangkan dengan LumiCloud untuk isolasi optik 100%."
+      },
+      "caffeine": {
+        "title": "Batas Kafein",
+        "desc": "Kafein memiliki waktu paruh 5-6 jam. Cangkir terakhir Anda harus pada jam 2 siang untuk memastikan reseptor adenosin Anda siap untuk tidur.",
+        "action": "Jika Anda sensitif, CalmiCloud membantu memblokir 'kebisingan' detak jantung yang cepat."
+      },
+      "breath": {
+        "title": "Napas 4-7-8",
+        "desc": "Tarik napas selama 4 hitungan, tahan 7, buang 8. Ini memberi sinyal pada sistem saraf parasimpatis Anda untuk menurunkan kortisol.",
+        "action": "CerviCloud membuka saluran udara Anda untuk pernapasan yang lebih dalam dan lancar."
+      }
+    }
+  },
+  "UGCStrip": {
+    "title": "Hidup bersama Sheepie",
+    "subtitle": "Bergabunglah dengan ribuan orang yang tidur nyenyak. #SleepWithSheepie"
+  },
+  "FAQPreview": {
+    "label": "Pertanyaan Umum",
+    "title": "Penasaran tentang tidur yang lebih baik?",
+    "viewAll": "Lihat semua FAQ"
+  },
+  "Footer": {
+    "description": "Perlengkapan tidur premium untuk hari esok yang lebih cerah.",
+    "explore": "Jelajahi",
+    "support": "Bantuan",
+    "follow": "Ikuti Kami",
+    "contact": "Hubungi Kami",
+    "faq": "FAQ",
+    "copyright": "© {year} Sheepie. Hak cipta dilindungi undang-undang."
+  },
+  "AboutPage": {
+    "metaTitle": "Filosofi Kami | Sheepie.",
+    "metaDescription": "Kami percaya istirahat adalah pondasi untuk hari esok yang lebih cerah. Pelajari bagaimana kami menjembatani ilmu ergonomi dan kenyamanan.",
+    "label": "Filosofi Kami",
+    "title": "Istirahat bukanlah Kemewahan.<br></br><span1>Itu adalah Pondasi.</span1>",
+    "intro": "Kami percaya bahwa hari esok yang lebih cerah dimulai dari malam sebelumnya. Sheepie lahir untuk menjembatani kesenjangan antara sains ergonomis dan kenyamanan lembut yang Anda dambakan.",
+    "sectionTitle": "Dirancang untuk Setiap Orang",
+    "p1": "Kami menghabiskan berbulan-bulan terobsesi dengan kepadatan, tingkat pantulan, dan sirkulasi udara kain. Baik Anda membutuhkan presisi servikal dari <strong1>Bantal CerviCloud</strong1>, keheningan earplugs <strong2>CalmiCloud</strong2> kami, atau kegelapan total dari <strong3>Masker Mata LumiCloud</strong3>, setiap lekukan disengaja.",
+    "p2": "Kami tidak sekadar menjual produk tidur. Kami menjual perasaan bangun dengan siap."
+  },
+  "ProductsPage": {
+    "metaTitle": "Koleksi | Sheepie.",
+    "metaDescription": "Jelajahi tiga pilar tidur: Bantal CerviCloud, Masker Mata LumiCloud, dan Earplug CalmiCloud. Dibuat untuk keheningan, kegelapan, dan penyelarasan.",
+    "label": "Koleksi",
+    "title": "Esensial.",
+    "subtitle": "Direkayasa untuk tiga pilar istirahat yang mendalam.",
+    "viewDetails": "Lihat Detail"
+  },
+  "ProductDetails": {
+    "collection": "Koleksi Esensial",
+    "selectOption": "Pilih Opsi",
+    "keyBenefits": "Manfaat Utama",
+    "secureCheckout": "Pembayaran aman melalui marketplace favorit Anda"
+  },
+  "FAQPage": {
+    "metaTitle": "Pusat Bantuan | Sheepie.",
+    "metaDescription": "Temukan jawaban tentang produk kami, pengiriman, dan instruksi perawatan. Semua yang perlu Anda ketahui untuk memulai perjalanan tidur yang lebih baik.",
+    "title": "Pusat Bantuan",
+    "subtitle": "Semua yang perlu Anda ketahui tentang perjalanan Anda menuju istirahat yang lebih baik.",
+    "categories": "Kategori",
+    "stillHaveQuestions": "Masih punya pertanyaan?",
+    "contactDesc": "Pakar tidur kami siap membantu memandu pilihan Anda.",
+    "contactButton": "Hubungi Bantuan",
+    "cats": {
+      "calmi": "CalmiCloud Earplugs",
+      "lumi": "Masker Mata LumiCloud",
+      "cervi": "Bantal CerviCloud",
+      "shipping": "Pengiriman & Pengembalian"
+    }
+  },
+  "ContactPage": {
+    "metaTitle": "Hubungi Kami | Sheepie.",
+    "metaDescription": "Punya pertanyaan? Hubungi pakar tidur kami atau dapatkan bantuan untuk pesanan Anda. Kami di sini untuk membantu Anda tidur lebih nyenyak.",
+    "title": "Hubungi Kami",
+    "subtitle": "Pertanyaan tentang pesanan Anda? Penasaran dengan produknya? Kami di sini untuk membantu Anda tidur lebih nyenyak.",
+    "infoTitle": "Informasi Kontak",
+    "emailLabel": "Email Kami",
+    "emailNote": "Respon dalam 24 jam",
+    "socialLabel": "Media Sosial",
+    "socialNote": "DM kami untuk pertanyaan cepat.",
+    "marketplaceTitle": "Pesanan Marketplace",
+    "marketplaceDesc": "Untuk dukungan tercepat mengenai pengiriman atau pengembalian di Shopee/Tokopedia, silakan gunakan fitur chat langsung di aplikasi marketplace.",
+    "shopeeChat": "Chat Shopee",
+    "tokopediaChat": "Chat Tokopedia",
+    "formTitle": "Kirim Pesan",
+    "formLabels": {
+      "name": "Nama",
+      "email": "Email",
+      "subject": "Subjek",
+      "message": "Pesan"
+    },
+    "formPlaceholders": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "subject": "Pertanyaan Produk",
+      "message": "Apa yang bisa kami bantu?"
+    },
+    "submit": "Kirim Pesan"
+  },
+  "LanguageModal": {
+    "title": "Selamat Datang di Sheepie",
+    "subtitle": "Silakan pilih bahasa pilihan Anda.",
+    "english": "English",
+    "indonesian": "Bahasa Indonesia"
+  },
+  "FAQs": {
+    "calmi": {
+      "reusable": { "q": "Apakah bisa dipakai ulang? Cara cucinya?", "a": "Ya, CalmiCloud dirancang untuk penggunaan berulang. Cukup cuci lembut dengan sabun ringan dan air hangat, biarkan kering sepenuhnya, dan simpan dalam wadah yang disediakan. Dengan perawatan yang tepat, earplug ini jauh lebih awet daripada busa sekali pakai." },
+      "sizes": { "q": "Apakah ada ukuran yang berbeda?", "a": "CalmiCloud memiliki desain yang dapat dibentuk secara universal. Alih-alih memaksakan ukuran tertentu ke dalam saluran telinga Anda, Anda membentuk silikon untuk menyegel telinga luar Anda, memberikan kecocokan khusus tanpa tekanan untuk ukuran telinga apa pun." },
+      "alarm": { "q": "Apakah saya masih akan mendengar alarm saya?", "a": "Ya. CalmiCloud dirancang untuk mengurangi kebisingan latar belakang (seperti dengkuran atau lalu lintas) sekitar 28dB. Suara peringatan penting, seperti alarm atau nada dering telepon, tetap terdengar demi keamanan Anda." }
+    },
+    "lumi": {
+      "eyelashes": { "q": "Apakah menekan bulu mata atau kelopak mata?", "a": "Tidak sama sekali. Masker ini memiliki rongga mata berkontur 3D yang dalam yang memungkinkan Anda berkedip bebas. Memberikan isolasi kegelapan total tanpa tekanan pada mata Anda." },
+      "strap": { "q": "Apakah talinya aman untuk rambut?", "a": "Ya. Kami menggunakan tali yang dapat disesuaikan yang halus dan bebas sangkut, dirancang khusus untuk mencegah kekusutan, tidak seperti karet elastis kasar pada masker standar." },
+      "washable": { "q": "Apakah bisa dicuci dengan mesin?", "a": "Kami menyarankan mencuci dengan tangan untuk memaksimalkan umur memory foam. Jika Anda harus menggunakan mesin, masukkan masker ke dalam kantong laundry dan gunakan siklus halus dengan air dingin." }
+    },
+    "cervi": {
+      "firmness": { "q": "Bantalnya keras atau empuk?", "a": "CerviCloud menggunakan memory foam medium-firm. Dirancang agar cukup mendukung untuk menjaga tulang leher Anda dalam posisi netral, namun cukup lentur untuk terasa nyaman, tidak pernah kaku." },
+      "adjustment": { "q": "Apakah ada masa penyesuaian?", "a": "Ya, biasanya 7-14 malam. Jika Anda beralih dari bantal tradisional, otot leher dan tulang belakang Anda mungkin perlu waktu untuk rileks ke posisi alami yang benar." },
+      "cover": { "q": "Apakah sarungnya bisa dicuci?", "a": "Ya. Sarung luar bambu yang sejuk dapat dilepas dan dicuci dengan mesin. Mohon jangan mencuci inti memory foam bagian dalam." }
+    },
+    "shipping": {
+      "returns": { "q": "Apa kebijakan pengembalian Anda?", "a": "Kami menerima pengembalian atau penukaran untuk cacat produksi atau barang yang salah diterima. Karena standar kebersihan yang ketat, kami tidak dapat menerima pengembalian produk tidur yang sudah dipakai kecuali cacat." },
+      "duration": { "q": "Berapa lama pengiriman?", "a": "Pesanan biasanya diproses dalam 24 jam. Pengiriman standar memakan waktu 2–5 hari kerja, tergantung lokasi Anda." }
+    }
+  },
+  "Products": {
+    "cervicloud": { 
+      "name": "Bantal CerviCloud", 
+      "tagline": "Penyelarasan tulang belakang, disempurnakan.",
+      "description": "Ubah istirahat Anda dengan Bantal CerviCloud. Bentuk Kupu-kupu 4D-nya menopang leher Anda untuk menjaga keselarasan servikal alami, meredakan titik tekanan yang persisten. Diresapi dengan partikel difusi termal dan dibungkus kain Ice-Silk, ia menawarkan dukungan yang luas dan sejuk yang beradaptasi dengan setiap gerakan Anda.",
+      "benefits": {
+        "0": "Kontur ergonomis Kupu-kupu 4D",
+        "1": "Ice-Silk yang menyejukkan & difusi panas",
+        "2": "Busa memori kepadatan tinggi lambat memantul",
+        "3": "Dukungan lebar 64cm yang luas"
+      }
+    },
+    "lumicloud": { 
+      "name": "Masker Mata LumiCloud", 
+      "tagline": "Pengalaman blackout tanpa beban.",
+      "description": "Direkayasa untuk panas, dibuat untuk jiwa. LumiCloud menggabungkan Kain Katun Lembut premium dengan rongga mata berkontur 3D untuk memberikan isolasi blackout 100% tanpa tekanan. Bernapas, dapat disesuaikan, dan seringan bulu—ini bukan sekadar masker, ini adalah sinyal bagi otak Anda bahwa sudah waktunya untuk istirahat.",
+      "benefits": {
+        "0": "Kain Katun Lembut",
+        "1": "Rekayasa Blackout 100%",
+        "2": "Rongga mata 3D tanpa tekanan",
+        "3": "Bernapas & tahan keringat"
+      }
+    },
+    "calmicloud": { 
+      "name": "CalmiCloud Earplugs", 
+      "tagline": "Keheningan yang dapat dibentuk untuk dunia yang bising.",
+      "description": "Capai keheningan mendalam tanpa tekanan invasif. CalmiCloud dibuat dari silikon kelas medis yang dapat dibentuk yang menyegel saluran telinga luar Anda dengan sempurna. Tahan air dan dapat digunakan kembali, ia memblokir dengkuran, lalu lintas, dan gangguan—baik Anda sedang tidur, berenang, atau mencari fokus yang mendalam.",
+      "benefits": {
+        "0": "Silikon cetakan pas khusus",
+        "1": "Segel luar bebas tekanan",
+        "2": "Tahan air & higienis",
+        "3": "Dapat digunakan kembali & ramah lingkungan"
+      }
+    }
+  },
+  "FAQs": {
+    "calmi": {
+      "reusable": { "q": "Apakah bisa dipakai ulang? Cara cucinya?", "a": "Ya, CalmiCloud dirancang untuk penggunaan berulang. Cukup cuci lembut dengan sabun ringan dan air hangat, biarkan kering sepenuhnya, dan simpan dalam wadah yang disediakan." }
+    },
+    "lumi": {
+      "eyelashes": { "q": "Apakah menekan bulu mata atau kelopak mata?", "a": "Tidak sama sekali. Masker ini memiliki rongga mata berkontur 3D yang dalam yang memungkinkan Anda berkedip bebas. Memberikan isolasi kegelapan total tanpa tekanan pada mata Anda." }
+    },
+    "cervi": {
+      "firmness": { "q": "Bantalnya keras atau empuk?", "a": "CerviCloud menggunakan memory foam medium-firm. Dirancang agar cukup mendukung untuk menjaga tulang leher Anda dalam posisi netral, namun cukup lentur untuk terasa nyaman." }
+    },
+    "shipping": {
+      "duration": { "q": "Berapa lama pengiriman?", "a": "Pesanan biasanya diproses dalam 24 jam. Pengiriman standar memakan waktu 2–5 hari kerja, tergantung lokasi Anda." }
+    }
+  },
+  "FAQs": {
+    "calmi": {
+      "reusable": { "q": "Apakah bisa dipakai ulang? Cara cucinya?", "a": "Ya, CalmiCloud dirancang untuk penggunaan berulang. Cukup cuci lembut dengan sabun ringan dan air hangat, biarkan kering sepenuhnya, dan simpan dalam wadah yang disediakan." }
+    },
+    "lumi": {
+      "eyelashes": { "q": "Apakah menekan bulu mata atau kelopak mata?", "a": "Tidak sama sekali. Masker ini memiliki rongga mata berkontur 3D yang dalam yang memungkinkan Anda berkedip bebas. Memberikan isolasi kegelapan total tanpa tekanan pada mata Anda." }
+    },
+    "cervi": {
+      "firmness": { "q": "Bantalnya keras atau empuk?", "a": "CerviCloud menggunakan memory foam medium-firm. Dirancang agar cukup mendukung untuk menjaga tulang leher Anda dalam posisi netral, namun cukup lentur untuk terasa nyaman." }
+    },
+    "shipping": {
+      "duration": { "q": "Berapa lama pengiriman?", "a": "Pesanan biasanya diproses dalam 24 jam. Pengiriman standar memakan waktu 2–5 hari kerja, tergantung lokasi Anda." }
+    }
+  }
+}
