@@ -8,9 +8,13 @@ import { getTranslations } from "next-intl/server";
 
 // This is required for SSG with dynamic routes
 export async function generateStaticParams() {
-  return products.map((product) => ({
-    slug: product.slug,
-  }));
+  const locales = ['en', 'id'];
+  return locales.flatMap((locale) =>
+    products.map((product) => ({
+      locale,
+      slug: product.slug,
+    }))
+  );
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string, locale: string }> }) {
