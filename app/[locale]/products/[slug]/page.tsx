@@ -54,7 +54,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
           {/* Right Column: Sticky Product Info (Client Component for Variants) */}
           <div className="lg:col-span-5 relative w-full min-w-0">
-             <ProductDetails product={product} />
+             <ProductDetails product={product} locale={locale} />
           </div>
 
         </div>
