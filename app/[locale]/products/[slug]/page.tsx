@@ -43,15 +43,15 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden w-full max-w-[100vw]">
       <Navbar />
-      
+
       <div className="container mx-auto px-4 py-12 lg:py-24">
         <div className="grid lg:grid-cols-12 gap-12 w-full">
-          
+
           {/* Left Column: Large Scrolling Gallery (Editorial Style) */}
           <div className="lg:col-span-7 w-full min-w-0">
              <ProductGallery images={product.images} productName={translatedName} />
           </div>
-          
+
           {/* Right Column: Sticky Product Info (Client Component for Variants) */}
           <div className="lg:col-span-5 relative w-full min-w-0">
              <ProductDetails product={product} />

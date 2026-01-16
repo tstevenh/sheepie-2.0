@@ -67,11 +67,6 @@
       "calmicloud": "Silence"
     }
   },
-  "Products": {
-    "cervicloud": { "name": "CerviCloud Pillow", "tagline": "Spine alignment, perfected." },
-    "lumicloud": { "name": "LumiCloud Eye Mask", "tagline": "The weightless blackout experience." },
-    "calmicloud": { "name": "CalmiCloud Earplugs", "tagline": "Moldable silence for a chaotic world." }
-  },
   "SleepAcademy": {
     "label": "The Sleep Academy",
     "title": "Rituals for <br></br> <span1>Restoration.</span1>",
@@ -134,7 +129,9 @@
     "collection": "Essential Collection",
     "selectOption": "Select Option",
     "keyBenefits": "Key Benefits",
-    "secureCheckout": "Secure checkout via your favorite marketplace"
+    "secureCheckout": "Secure checkout via your favorite marketplace",
+    "includesCalmiCloud": "Includes CalmiCloud Earplugs",
+    "includesCalmiCloudSubtext": "Included for a limited period"
   },
   "FAQPage": {
     "metaTitle": "Support Center | Sheepie.",
@@ -241,34 +238,6 @@
         "2": "Water-resistant & hygienic",
         "3": "Reusable & eco-friendly"
       }
-    }
-  },
-  "FAQs": {
-    "calmi": {
-      "reusable": { "q": "Are they reusable? How do I clean them?", "a": "Yes, CalmiCloud is designed for repeated use. Simply wash gently with mild soap and warm water, let them air-dry completely, and store in the provided clean case." }
-    },
-    "lumi": {
-      "eyelashes": { "q": "Does it press on my eyelashes or eyelids?", "a": "Not at all. The mask features deep 3D contoured eye cavities that allow you to blink freely. It provides total blackout isolation without any pressure on your eyes." }
-    },
-    "cervi": {
-      "firmness": { "q": "Is the pillow hard or soft?", "a": "CerviCloud utilizes medium-firm memory foam. It is engineered to be supportive enough to hold your cervical spine in neutral alignment, yet compliant enough to feel comfortable." }
-    },
-    "shipping": {
-      "duration": { "q": "How long does shipping take?", "a": "Orders are typically processed within 24 hours. Standard delivery takes 2–5 working days, depending on your location." }
-    }
-  },
-  "FAQs": {
-    "calmi": {
-      "reusable": { "q": "Are they reusable? How do I clean them?", "a": "Yes, CalmiCloud is designed for repeated use. Simply wash gently with mild soap and warm water, let them air-dry completely, and store in the provided clean case." }
-    },
-    "lumi": {
-      "eyelashes": { "q": "Does it press on my eyelashes or eyelids?", "a": "Not at all. The mask features deep 3D contoured eye cavities that allow you to blink freely. It provides total blackout isolation without any pressure on your eyes." }
-    },
-    "cervi": {
-      "firmness": { "q": "Is the pillow hard or soft?", "a": "CerviCloud utilizes medium-firm memory foam. It is engineered to be supportive enough to hold your cervical spine in neutral alignment, yet compliant enough to feel comfortable." }
-    },
-    "shipping": {
-      "duration": { "q": "How long does shipping take?", "a": "Orders are typically processed within 24 hours. Standard delivery takes 2–5 working days, depending on your location." }
     }
   }
 }

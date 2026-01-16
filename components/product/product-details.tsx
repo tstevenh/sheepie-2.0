@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { BuyButtons } from "@/components/product/buy-buttons";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star } from "lucide-react";
+import { Check, Star, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 
 interface ProductVariant {
   name: string;
@@ -31,6 +32,7 @@ interface Product {
 export function ProductDetails({ product }: { product: Product }) {
   const t = useTranslations('ProductDetails');
   const tProd = useTranslations('Products');
+  const locale = useLocale();
 
   const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(
     product.variants ? product.variants[0] : null
@@ -53,15 +55,35 @@ export function ProductDetails({ product }: { product: Product }) {
             <span>4.9</span>
           </div>
         </div>
-        
+
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-primary leading-tight">
           {tProd(`${product.slug}.name` as any)}
         </h1>
-        
+
         <p className="text-xl text-muted-foreground font-light italic">
           {tProd(`${product.slug}.tagline` as any)}
         </p>
-        
+
+        {/* CalmiCloud Inclusion Banner - CerviCloud only */}
+        {product.slug === 'cervicloud' && (
+          <Link href={`/${locale}/products/calmicloud`} className="block">
+            <div className="bg-green-50 border border-green-100 rounded-xl p-4 hover:bg-green-100/80 hover:border-green-200 transition-all cursor-pointer group">
+              <div className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <p className="font-medium text-foreground text-sm flex items-center gap-2">
+                    {t('includesCalmiCloud')}
+                    <ArrowRight className="w-4 h-4 text-green-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {t('includesCalmiCloudSubtext')}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Link>
+        )}
+
         <div className="flex items-baseline gap-3 pt-2">
           {currentOriginalPrice && (
             <span className="text-xl text-muted-foreground/60 line-through decoration-muted-foreground/60 decoration-1 font-light">

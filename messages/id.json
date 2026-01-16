@@ -67,11 +67,6 @@
       "calmicloud": "Keheningan"
     }
   },
-  "Products": {
-    "cervicloud": { "name": "Bantal CerviCloud", "tagline": "Penyelarasan tulang belakang, disempurnakan." },
-    "lumicloud": { "name": "Masker Mata LumiCloud", "tagline": "Pengalaman blackout tanpa beban." },
-    "calmicloud": { "name": "CalmiCloud Earplugs", "tagline": "Keheningan yang dapat dibentuk untuk dunia yang bising." }
-  },
   "SleepAcademy": {
     "label": "Akademi Tidur",
     "title": "Ritual untuk <br></br> <span1>Pemulihan.</span1>",
@@ -134,7 +129,9 @@
     "collection": "Koleksi Esensial",
     "selectOption": "Pilih Opsi",
     "keyBenefits": "Manfaat Utama",
-    "secureCheckout": "Pembayaran aman melalui marketplace favorit Anda"
+    "secureCheckout": "Pembayaran aman melalui marketplace favorit Anda",
+    "includesCalmiCloud": "Termasuk CalmiCloud Earplugs",
+    "includesCalmiCloudSubtext": "Termasuk untuk periode terbatas"
   },
   "FAQPage": {
     "metaTitle": "Pusat Bantuan | Sheepie.",
@@ -241,34 +238,6 @@
         "2": "Tahan air & higienis",
         "3": "Dapat digunakan kembali & ramah lingkungan"
       }
-    }
-  },
-  "FAQs": {
-    "calmi": {
-      "reusable": { "q": "Apakah bisa dipakai ulang? Cara cucinya?", "a": "Ya, CalmiCloud dirancang untuk penggunaan berulang. Cukup cuci lembut dengan sabun ringan dan air hangat, biarkan kering sepenuhnya, dan simpan dalam wadah yang disediakan." }
-    },
-    "lumi": {
-      "eyelashes": { "q": "Apakah menekan bulu mata atau kelopak mata?", "a": "Tidak sama sekali. Masker ini memiliki rongga mata berkontur 3D yang dalam yang memungkinkan Anda berkedip bebas. Memberikan isolasi kegelapan total tanpa tekanan pada mata Anda." }
-    },
-    "cervi": {
-      "firmness": { "q": "Bantalnya keras atau empuk?", "a": "CerviCloud menggunakan memory foam medium-firm. Dirancang agar cukup mendukung untuk menjaga tulang leher Anda dalam posisi netral, namun cukup lentur untuk terasa nyaman." }
-    },
-    "shipping": {
-      "duration": { "q": "Berapa lama pengiriman?", "a": "Pesanan biasanya diproses dalam 24 jam. Pengiriman standar memakan waktu 2–5 hari kerja, tergantung lokasi Anda." }
-    }
-  },
-  "FAQs": {
-    "calmi": {
-      "reusable": { "q": "Apakah bisa dipakai ulang? Cara cucinya?", "a": "Ya, CalmiCloud dirancang untuk penggunaan berulang. Cukup cuci lembut dengan sabun ringan dan air hangat, biarkan kering sepenuhnya, dan simpan dalam wadah yang disediakan." }
-    },
-    "lumi": {
-      "eyelashes": { "q": "Apakah menekan bulu mata atau kelopak mata?", "a": "Tidak sama sekali. Masker ini memiliki rongga mata berkontur 3D yang dalam yang memungkinkan Anda berkedip bebas. Memberikan isolasi kegelapan total tanpa tekanan pada mata Anda." }
-    },
-    "cervi": {
-      "firmness": { "q": "Bantalnya keras atau empuk?", "a": "CerviCloud menggunakan memory foam medium-firm. Dirancang agar cukup mendukung untuk menjaga tulang leher Anda dalam posisi netral, namun cukup lentur untuk terasa nyaman." }
-    },
-    "shipping": {
-      "duration": { "q": "Berapa lama pengiriman?", "a": "Pesanan biasanya diproses dalam 24 jam. Pengiriman standar memakan waktu 2–5 hari kerja, tergantung lokasi Anda." }
     }
   }
 }
