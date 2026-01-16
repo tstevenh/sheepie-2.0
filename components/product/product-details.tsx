@@ -5,8 +5,9 @@ import { BuyButtons } from "@/components/product/buy-buttons";
 import { Badge } from "@/components/ui/badge";
 import { Check, Star, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface ProductVariant {
   name: string;
@@ -32,7 +33,10 @@ interface Product {
 export function ProductDetails({ product }: { product: Product }) {
   const t = useTranslations('ProductDetails');
   const tProd = useTranslations('Products');
-  const locale = useLocale();
+  const pathname = usePathname();
+
+  // Extract locale from pathname (e.g., "/en/products/cervicloud" -> "en")
+  const locale = pathname.split('/')[1] || 'en';
 
   const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(
     product.variants ? product.variants[0] : null
