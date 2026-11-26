@@ -28,6 +28,8 @@ type PostDependencies = {
   now?: () => Date;
   allowedOrigins?: () => string | undefined;
   isVercel?: () => boolean;
+  /** Header the host overwrites with the visitor IP (DigitalOcean: do-connecting-ip). */
+  trustedIpHeader?: () => string | undefined;
   trustProxyHeaders?: () => boolean;
 };
 
@@ -94,11 +96,15 @@ function normalizeIp(value: string | null): string | null {
 
 function clientAddress(
   headers: Headers,
-  deployment: { vercel: boolean; trustProxyHeaders: boolean },
+  deployment: { vercel: boolean; trustedIpHeader?: string; trustProxyHeaders: boolean },
 ): string {
   if (deployment.vercel) {
     const vercelAddress = normalizeIp(headers.get("x-vercel-forwarded-for"));
     if (vercelAddress) return vercelAddress;
+  }
+  if (deployment.trustedIpHeader) {
+    // Only the host's own header counts here; visitor-supplied forwarding headers are ignored.
+    return normalizeIp(headers.get(deployment.trustedIpHeader)) ?? "unknown";
   }
   if (deployment.trustProxyHeaders) {
     for (const name of ["x-forwarded-for", "x-real-ip"] as const) {
@@ -160,6 +166,8 @@ export function createPostHandler(deps: PostDependencies) {
   const now = deps.now ?? (() => new Date());
   const allowedOrigins = deps.allowedOrigins ?? (() => process.env.BIO_ANALYTICS_ALLOWED_ORIGINS);
   const isVercel = deps.isVercel ?? (() => Boolean(process.env.VERCEL));
+  const trustedIpHeader =
+    deps.trustedIpHeader ?? (() => process.env.TRUSTED_CLIENT_IP_HEADER?.trim().toLowerCase() || undefined);
   const trustProxyHeaders =
     deps.trustProxyHeaders ?? (() => process.env.BIO_ANALYTICS_TRUST_PROXY_HEADERS === "true");
 
@@ -219,6 +227,7 @@ export function createPostHandler(deps: PostDependencies) {
       const rateKey = deriveRateKey(
         clientAddress(request.headers, {
           vercel: isVercel(),
+          trustedIpHeader: trustedIpHeader(),
           trustProxyHeaders: trustProxyHeaders(),
         }),
         day,

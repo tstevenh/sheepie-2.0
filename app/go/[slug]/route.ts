@@ -1,5 +1,4 @@
 import { randomUUID } from "node:crypto";
-import { isIP } from "node:net";
 
 import { bioConfig } from "@/data/bio";
 import {
@@ -10,6 +9,7 @@ import {
   type BioProductSlug,
 } from "@/lib/bio-analytics/contracts";
 import { createDailyRateKey, ingestBioEvent } from "@/lib/bio-analytics/server";
+import { trustedClientIp } from "@/lib/client-ip";
 import { androidIntent, isShopeeUrl, platformOf } from "@/lib/go/app-link";
 import { openerPageHtml, type OpenerProduct } from "@/lib/go/opener-page";
 import { pageView } from "@/lib/meta/events";
@@ -71,9 +71,7 @@ function targetFor(slug: string): Target | null {
 }
 
 function clientAddress(headers: Headers): string {
-  const forwarded = headers.get("x-vercel-forwarded-for") ?? headers.get("x-forwarded-for");
-  const first = forwarded?.split(",")[0]?.trim();
-  return first && isIP(first) ? first : "unknown";
+  return trustedClientIp(headers) ?? "unknown";
 }
 
 function campaignFrom(url: URL) {

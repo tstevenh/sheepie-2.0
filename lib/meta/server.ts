@@ -1,5 +1,5 @@
 // lib/meta/server.ts
-import { isIP } from "node:net";
+import { trustedClientIp } from "@/lib/client-ip";
 
 import type { MetaEvent } from "./events";
 
@@ -48,15 +48,9 @@ function cookie(request: Request, name: string): string | undefined {
   return undefined;
 }
 
-// Meta matches server events to people partly by IP, so take it from the host's own header first:
-// Vercel sets x-vercel-forwarded-for, DigitalOcean App Platform sets do-connecting-ip.
+// Meta matches server events to people partly by IP, so read it from the host's own header.
 function clientIp(request: Request): string | undefined {
-  const forwarded =
-    request.headers.get("x-vercel-forwarded-for") ??
-    request.headers.get("do-connecting-ip") ??
-    request.headers.get("x-forwarded-for");
-  const first = forwarded?.split(",")[0]?.trim();
-  return first && isIP(first) ? first : undefined;
+  return trustedClientIp(request.headers);
 }
 
 function safeUrl(value: string | null): string | undefined {

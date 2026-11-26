@@ -44,6 +44,8 @@ services:
       - key: NODE_OPTIONS
         value: --max-old-space-size=320
         scope: RUN_TIME
-      - key: BIO_ANALYTICS_TRUST_PROXY_HEADERS
-        value: "true"
+      # Visitor IP for Meta CAPI and link-in-bio rate limits. DigitalOcean overwrites this header on
+      # every request; x-forwarded-for is visitor-controlled, so BIO_ANALYTICS_TRUST_PROXY_HEADERS stays off.
+      - key: TRUSTED_CLIENT_IP_HEADER
+        value: do-connecting-ip
         scope: RUN_TIME
