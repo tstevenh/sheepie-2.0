@@ -27,7 +27,7 @@ ingress:
 services:
   - name: web
     github:
-      repo: siisksksjs/sheepie-2.0
+      repo: tstevenh/sheepie-2.0
       branch: main
       deploy_on_push: true
     environment_slug: node-js
