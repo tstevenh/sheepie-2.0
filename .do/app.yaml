@@ -32,14 +32,21 @@ services:
       deploy_on_push: true
     environment_slug: node-js
     build_command: npm run build
-    run_command: npm start
+    # Run Next directly (not via npm) so shutdown signals reach the server.
+    run_command: node_modules/.bin/next start
     http_port: 8080
     instance_count: 1
     # $5 plan (512 MB). Load-tested locally at ~360 MB peak with the heap cap below;
     # move to apps-s-1vcpu-1gb-fixed ($10) if DigitalOcean shows memory restarts.
     instance_size_slug: apps-s-1vcpu-0.5gb
+    # Static file outside the i18n middleware; the default 1s timeout was too tight on the
+    # shared $5 CPU under live traffic and got the container restarted every ~100s.
     health_check:
-      http_path: /id
+      http_path: /robots.txt
+      initial_delay_seconds: 10
+      period_seconds: 10
+      timeout_seconds: 5
+      failure_threshold: 6
     envs:
       - key: NODE_OPTIONS
         value: --max-old-space-size=320
