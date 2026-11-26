@@ -22,13 +22,18 @@ const nextConfig: NextConfig = {
     ])];
   },
   images: {
-    // AVIF first (smallest), WebP as the fallback; optimized images are cached for a year since paths change when content does.
-    formats: ["image/avif", "image/webp"],
+    // WebP only: AVIF encoding needs several times the memory and CPU, which crashed the 512 MB
+    // DigitalOcean instance when a visitor's browser asked for many sizes at once.
+    // Optimized images are cached for a year since paths change when content does.
+    formats: ["image/webp"],
     minimumCacheTTL: 31536000,
   },
   experimental: {
     // Inline the (small) CSS into the HTML so first paint does not wait on a stylesheet request.
     inlineCss: true,
+    // Resize one image at a time so a burst of image requests can't spike memory past the instance limit.
+    imgOptConcurrency: 1,
+    imgOptSequentialRead: true,
   },
 };
 
