@@ -1,0 +1,49 @@
+# DigitalOcean App Platform spec for www.sheepiesleep.com.
+# Env var values are not stored here: they are filled in when the app is created or updated
+# (doctl apps create/update --spec), and secrets are kept encrypted by DigitalOcean.
+name: sheepie
+region: sgp
+domains:
+  - domain: www.sheepiesleep.com
+    type: PRIMARY
+  - domain: sheepiesleep.com
+    type: ALIAS
+ingress:
+  rules:
+    # Bare domain -> www, so search engines only ever see one address.
+    - match:
+        authority:
+          exact: sheepiesleep.com
+        path:
+          prefix: /
+      redirect:
+        authority: www.sheepiesleep.com
+        redirect_code: 301
+    - match:
+        path:
+          prefix: /
+      component:
+        name: web
+services:
+  - name: web
+    github:
+      repo: siisksksjs/sheepie-2.0
+      branch: main
+      deploy_on_push: true
+    environment_slug: node-js
+    build_command: npm run build
+    run_command: npm start
+    http_port: 8080
+    instance_count: 1
+    # $5 plan (512 MB). Load-tested locally at ~360 MB peak with the heap cap below;
+    # move to apps-s-1vcpu-1gb-fixed ($10) if DigitalOcean shows memory restarts.
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    health_check:
+      http_path: /id
+    envs:
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=320
+        scope: RUN_TIME
+      - key: BIO_ANALYTICS_TRUST_PROXY_HEADERS
+        value: "true"
+        scope: RUN_TIME

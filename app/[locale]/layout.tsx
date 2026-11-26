@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Quicksand } from "next/font/google";
 import "../globals.css";
-import { Analytics } from "@vercel/analytics/react";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -72,7 +71,6 @@ export default async function RootLayout({
             <UmamiAnalytics />
             <GoogleAnalytics />
             <AttributionCapture />
-            <Analytics />
           </MotionProvider>
         </NextIntlClientProvider>
       </body>
