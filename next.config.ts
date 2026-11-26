@@ -22,18 +22,14 @@ const nextConfig: NextConfig = {
     ])];
   },
   images: {
-    // WebP only: AVIF encoding needs several times the memory and CPU, which crashed the 512 MB
-    // DigitalOcean instance when a visitor's browser asked for many sizes at once.
-    // Optimized images are cached for a year since paths change when content does.
-    formats: ["image/webp"],
-    minimumCacheTTL: 31536000,
+    // Never resize on our own server (it crashed the 512 MB DigitalOcean instance):
+    // Cloudinary does it when NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is set, otherwise originals are served.
+    loader: "custom",
+    loaderFile: "./lib/image-loader.ts",
   },
   experimental: {
     // Inline the (small) CSS into the HTML so first paint does not wait on a stylesheet request.
     inlineCss: true,
-    // Resize one image at a time so a burst of image requests can't spike memory past the instance limit.
-    imgOptConcurrency: 1,
-    imgOptSequentialRead: true,
   },
 };
 
