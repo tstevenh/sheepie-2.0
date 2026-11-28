@@ -162,7 +162,7 @@
       "Reusable & eco-friendly"
     ],
     "images": [
-      "/images/products/calmicloud/listing-01.webp",
+      "/images/products/calmicloud/listing-01-white.webp",
       "/images/products/calmicloud/listing-02.webp",
       "/images/products/calmicloud/listing-03.webp",
       "/images/products/calmicloud/listing-04.webp",
@@ -179,25 +179,25 @@
         "qty": 1,
         "price": "IDR 88.000",
         "originalPrice": "IDR 108.000",
-        "image": "/images/products/calmicloud/bundle-single.webp"
+        "image": "/images/products/calmicloud/bundle-single-white.webp"
       },
       {
         "qty": 2,
         "price": "IDR 166.000",
         "originalPrice": "IDR 216.000",
-        "image": "/images/products/calmicloud/bundle-x2.webp"
+        "image": "/images/products/calmicloud/bundle-x2-white.webp"
       },
       {
         "qty": 3,
         "price": "IDR 254.000",
         "originalPrice": "IDR 324.000",
-        "image": "/images/products/calmicloud/bundle-x3.webp"
+        "image": "/images/products/calmicloud/bundle-x3-white.webp"
       },
       {
         "qty": 4,
         "price": "IDR 342.000",
         "originalPrice": "IDR 432.000",
-        "image": "/images/products/calmicloud/bundle-x4.webp"
+        "image": "/images/products/calmicloud/bundle-x4-white.webp"
       }
     ]
   }

@@ -248,7 +248,7 @@ const productStories: Array<Omit<BioProduct, "price" | "gallery" | "actions">> =
     description:
       "Silikon lembut yang bisa dibentuk ini menutup bagian luar telinga dengan nyaman dan membantu meredam suara sekitar.",
     image: {
-      src: "/images/products/calmicloud/listing-01.webp",
+      src: "/images/products/calmicloud/listing-01-white.webp",
       alt: "Earplug silikon CalmiCloud dalam wadah transparan di latar biru muda",
     },
   },
